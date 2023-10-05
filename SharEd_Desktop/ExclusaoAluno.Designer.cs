@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "ExclusaoAluno";
-            this.Text = "ExclusaoAluno";
+            this.Text = "Excluir Aluno";
             this.ResumeLayout(false);
 
         }

@@ -37,7 +37,7 @@
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "AtualizacaoAdministrador";
-            this.Text = "AtualizacaoAdministrador";
+            this.Text = "Atualizar Administrador";
             this.ResumeLayout(false);
 
         }
