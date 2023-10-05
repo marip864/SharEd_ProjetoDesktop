@@ -135,8 +135,41 @@
     <EmbeddedResource Include="AreaUsuario.resx">
       <DependentUpon>AreaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AtualizacaoAdministrador.resx">
+      <DependentUpon>AtualizacaoAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizacaoAluno.resx">
+      <DependentUpon>AtualizacaoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizacaoDiretor.resx">
+      <DependentUpon>AtualizacaoDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizacaoProfessor.resx">
+      <DependentUpon>AtualizacaoProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroAdministrador.resx">
+      <DependentUpon>CadastroAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroDiretor.resx">
+      <DependentUpon>CadastroDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProfessor.resx">
+      <DependentUpon>CadastroProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoAdministrador.resx">
+      <DependentUpon>ExclusaoAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoAluno.resx">
+      <DependentUpon>ExclusaoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoDiretor.resx">
+      <DependentUpon>ExclusaoDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoProfessor.resx">
+      <DependentUpon>ExclusaoProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

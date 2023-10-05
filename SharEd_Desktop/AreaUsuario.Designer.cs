@@ -48,6 +48,8 @@
             this.diretorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.validarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,12 +214,36 @@
             this.validarToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.validarToolStripMenuItem.Text = "Validar Conteúdo";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(346, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "John Doe";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(347, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Diretor Cargo X";
+            // 
             // AreaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AreaUsuario";
@@ -251,5 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem diretorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem administradorToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem validarToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
