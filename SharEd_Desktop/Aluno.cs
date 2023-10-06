@@ -15,6 +15,11 @@ namespace SharEd_Desktop
         private String nome,rg,nascimento,telefone,email;
         private int ra,serie;
 
+        public Aluno(int ra)
+        {
+            Ra = ra;
+        }
+
         public Aluno()
         {
         }
@@ -173,7 +178,7 @@ namespace SharEd_Desktop
                 DAO_Conexao.con.Close();
             }
             return exc;
-        }*/
+        }
 
         public string Nome { get => nome; set => nome = value; }
         public string Rg { get => rg; set => rg = value; }

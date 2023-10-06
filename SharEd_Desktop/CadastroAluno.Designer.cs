@@ -30,9 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxSerie = new System.Windows.Forms.ComboBox();
             this.lblSerie = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -51,9 +51,9 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Controls.Add(this.btnCadastrar);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbxSerie);
             this.panel1.Controls.Add(this.lblSerie);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lblTelefone);
@@ -81,14 +81,15 @@
             this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(137, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 25);
-            this.textBox1.TabIndex = 13;
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(137, 212);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(237, 25);
+            this.txtEmail.TabIndex = 13;
             // 
             // lblEmail
             // 
@@ -100,14 +101,14 @@
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "E-mail:";
             // 
-            // comboBox1
+            // cbxSerie
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(474, 215);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 25);
-            this.comboBox1.TabIndex = 11;
+            this.cbxSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSerie.FormattingEnabled = true;
+            this.cbxSerie.Location = new System.Drawing.Point(474, 215);
+            this.cbxSerie.Name = "cbxSerie";
+            this.cbxSerie.Size = new System.Drawing.Size(111, 25);
+            this.cbxSerie.TabIndex = 11;
             // 
             // lblSerie
             // 
@@ -231,9 +232,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxSerie;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
