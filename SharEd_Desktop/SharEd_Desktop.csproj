@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
+    <Compile Include="Aluno.cs" />
     <Compile Include="AreaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +102,7 @@
     <Compile Include="CadastroProfessor.Designer.cs">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Diretor.cs" />
     <Compile Include="ExclusaoAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +133,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AreaUsuario.resx">
