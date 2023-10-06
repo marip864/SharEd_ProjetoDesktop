@@ -17,25 +17,6 @@ namespace SharEd_Desktop
             InitializeComponent();
         }
 
-        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Aluno aluno = new Aluno(int.Parse(txtRA.Text));
-            if (e.KeyChar == 13)
-            {
-
-                if (aluno.consultarAluno())
-                {
-                    MessageBox.Show("Aluno já cadastrado!");
-                }
-                else
-                {
-                    txtRG.Focus();
-                }
-
-                DAO_Conexao.con.Close();
-            }
-        }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             try

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblRa = new System.Windows.Forms.Label();
-            this.lblTelefone = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblRg = new System.Windows.Forms.Label();
-            this.lblNascimento = new System.Windows.Forms.Label();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtRa = new System.Windows.Forms.TextBox();
-            this.txtRg = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
+            this.txtRa = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblSerie = new System.Windows.Forms.Label();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.lblNascimento = new System.Windows.Forms.Label();
+            this.lblRg = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.lblRa = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +52,8 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.txtSerie);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.maskedTextBox2);
-            this.panel1.Controls.Add(this.maskedTextBox1);
+            this.panel1.Controls.Add(this.txtNascimento);
+            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.txtRg);
             this.panel1.Controls.Add(this.txtRa);
             this.panel1.Controls.Add(this.txtNome);
@@ -70,65 +70,75 @@
             this.panel1.Size = new System.Drawing.Size(661, 354);
             this.panel1.TabIndex = 0;
             // 
-            // lblNome
+            // txtSerie
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(69, 61);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(51, 17);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
+            this.txtSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSerie.Location = new System.Drawing.Point(490, 210);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(100, 25);
+            this.txtSerie.TabIndex = 14;
             // 
-            // lblRa
+            // txtEmail
             // 
-            this.lblRa.AutoSize = true;
-            this.lblRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRa.Location = new System.Drawing.Point(88, 110);
-            this.lblRa.Name = "lblRa";
-            this.lblRa.Size = new System.Drawing.Size(32, 17);
-            this.lblRa.TabIndex = 1;
-            this.lblRa.Text = "RA:";
+            this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(136, 210);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(274, 25);
+            this.txtEmail.TabIndex = 13;
             // 
-            // lblTelefone
+            // txtNascimento
             // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(54, 163);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(66, 17);
-            this.lblTelefone.TabIndex = 2;
-            this.lblTelefone.Text = "Telefone:";
+            this.txtNascimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNascimento.Location = new System.Drawing.Point(456, 159);
+            this.txtNascimento.Mask = "00/00/0000";
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.Size = new System.Drawing.Size(134, 25);
+            this.txtNascimento.TabIndex = 12;
             // 
-            // lblEmail
+            // txtTelefone
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(69, 213);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(54, 17);
-            this.lblEmail.TabIndex = 3;
-            this.lblEmail.Text = "E-mail:";
+            this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(136, 158);
+            this.txtTelefone.Mask = "(00) 00000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(167, 25);
+            this.txtTelefone.TabIndex = 11;
             // 
-            // lblRg
+            // txtRg
             // 
-            this.lblRg.AutoSize = true;
-            this.lblRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRg.Location = new System.Drawing.Point(349, 110);
-            this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(34, 17);
-            this.lblRg.TabIndex = 4;
-            this.lblRg.Text = "RG:";
+            this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRg.Location = new System.Drawing.Point(398, 51);
+            this.txtRg.Mask = "00,000,000-0";
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(192, 25);
+            this.txtRg.TabIndex = 10;
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
-            // lblNascimento
+            // txtRa
             // 
-            this.lblNascimento.AutoSize = true;
-            this.lblNascimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNascimento.Location = new System.Drawing.Point(349, 163);
-            this.lblNascimento.Name = "lblNascimento";
-            this.lblNascimento.Size = new System.Drawing.Size(90, 17);
-            this.lblNascimento.TabIndex = 5;
-            this.lblNascimento.Text = "Nascimento:";
+            this.txtRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRa.Location = new System.Drawing.Point(136, 51);
+            this.txtRa.Name = "txtRa";
+            this.txtRa.Size = new System.Drawing.Size(167, 25);
+            this.txtRa.TabIndex = 9;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(136, 108);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(454, 25);
+            this.txtNome.TabIndex = 8;
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.Location = new System.Drawing.Point(428, 213);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(46, 17);
+            this.lblSerie.TabIndex = 7;
+            this.lblSerie.Text = "Série:";
             // 
             // btnAtualizar
             // 
@@ -141,75 +151,67 @@
             this.btnAtualizar.TabIndex = 6;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
-            // lblSerie
+            // lblNascimento
             // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(428, 213);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(46, 17);
-            this.lblSerie.TabIndex = 7;
-            this.lblSerie.Text = "Série:";
+            this.lblNascimento.AutoSize = true;
+            this.lblNascimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNascimento.Location = new System.Drawing.Point(349, 163);
+            this.lblNascimento.Name = "lblNascimento";
+            this.lblNascimento.Size = new System.Drawing.Size(90, 17);
+            this.lblNascimento.TabIndex = 5;
+            this.lblNascimento.Text = "Nascimento:";
             // 
-            // txtNome
+            // lblRg
             // 
-            this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(136, 56);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(454, 25);
-            this.txtNome.TabIndex = 8;
+            this.lblRg.AutoSize = true;
+            this.lblRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRg.Location = new System.Drawing.Point(349, 54);
+            this.lblRg.Name = "lblRg";
+            this.lblRg.Size = new System.Drawing.Size(34, 17);
+            this.lblRg.TabIndex = 4;
+            this.lblRg.Text = "RG:";
             // 
-            // txtRa
+            // lblEmail
             // 
-            this.txtRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRa.Location = new System.Drawing.Point(136, 105);
-            this.txtRa.Name = "txtRa";
-            this.txtRa.Size = new System.Drawing.Size(167, 25);
-            this.txtRa.TabIndex = 9;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(69, 213);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(54, 17);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "E-mail:";
             // 
-            // txtRg
+            // lblTelefone
             // 
-            this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRg.Location = new System.Drawing.Point(398, 105);
-            this.txtRg.Mask = "00,000,000-0";
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(192, 25);
-            this.txtRg.TabIndex = 10;
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(54, 163);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(66, 17);
+            this.lblTelefone.TabIndex = 2;
+            this.lblTelefone.Text = "Telefone:";
             // 
-            // maskedTextBox1
+            // lblRa
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(136, 158);
-            this.maskedTextBox1.Mask = "(00) 00000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(167, 25);
-            this.maskedTextBox1.TabIndex = 11;
+            this.lblRa.AutoSize = true;
+            this.lblRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRa.Location = new System.Drawing.Point(88, 54);
+            this.lblRa.Name = "lblRa";
+            this.lblRa.Size = new System.Drawing.Size(32, 17);
+            this.lblRa.TabIndex = 1;
+            this.lblRa.Text = "RA:";
             // 
-            // maskedTextBox2
+            // lblNome
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(456, 159);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(134, 25);
-            this.maskedTextBox2.TabIndex = 12;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(136, 210);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(274, 25);
-            this.txtEmail.TabIndex = 13;
-            // 
-            // txtSerie
-            // 
-            this.txtSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerie.Location = new System.Drawing.Point(490, 210);
-            this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(100, 25);
-            this.txtSerie.TabIndex = 14;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(69, 111);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(51, 17);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // AtualizacaoAluno
             // 
@@ -239,8 +241,8 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtNascimento;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtRg;
         private System.Windows.Forms.TextBox txtRa;
         private System.Windows.Forms.TextBox txtNome;

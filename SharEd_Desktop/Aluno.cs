@@ -13,6 +13,12 @@ namespace SharEd_Desktop
     class Aluno
     {
         private String nome,rg,nascimento,telefone,email;
+
+        public Aluno(string nome)
+        {
+            Nome = nome;
+        }
+
         private int ra,serie;
 
         public Aluno(int ra)
@@ -106,7 +112,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra ='" + Ra + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where rg ='" + Rg + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
