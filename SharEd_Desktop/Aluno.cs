@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -29,13 +30,13 @@ namespace SharEd_Desktop
             Serie = serie;
         }
 
-        /*public bool cadastrarAluno()
+        public bool cadastrarAluno()
         {
             bool cad = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values ('" + CPF + "','" + Nome + "','" + Rua + "','" + Numero + "','" + Bairro + "','" + Complemento + "','" + CEP + "','" + Cidade + "','" + Estado + "','" + Telefone + "','" + Email + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Aluno (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "','" + Serie + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -56,7 +57,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set nomeAluno='" + Nome + "', ruaAluno='" + Rua + "', numeroAluno='" + Numero + "', bairroAluno='" + Bairro + "', complementoAluno='" + Complemento + "', CEPAluno='" + CEP + "', cidadeAluno='" + Cidade + "', estadoAluno='" + Estado + "', telefoneAluno='" + Telefone + "', emailAluno='" + Email + "' where CPFAluno ='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Aluno set nome='" + Nome + "', celular='" + Telefone + "', rg='" + Rg + "', emailInstitucional='" + Email + "', dataNascimento='" + Nascimento + "', classe='" + Serie + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -76,7 +77,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Aluno where CPFAluno ='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra ='" + Ra + "'", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
@@ -100,7 +101,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Estudio_Aluno where CPFAluno ='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra ='" + Ra + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select ativo from Estudio_Aluno where CPFAluno = '" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select ativo from Aluno where ra = '" + Ra + "'", DAO_Conexao.con);
                 resultS = consulta.ExecuteReader();
                 if (resultS.Read())
                 {
@@ -141,7 +142,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set ativo = 0 where CPFAluno = '" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Aluno set ativo = 0 where ra = '" + Ra + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 result = true;
             }
@@ -159,7 +160,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Estudio_Aluno set ativo = 1 where CPFAluno = '" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Aluno set ativo = 1 where ra = '" + Ra + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }
