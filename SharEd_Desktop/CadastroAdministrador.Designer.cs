@@ -213,6 +213,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(426, 216);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(136, 25);
             this.txtSenha.TabIndex = 14;
             // 
@@ -220,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroAdministrador";

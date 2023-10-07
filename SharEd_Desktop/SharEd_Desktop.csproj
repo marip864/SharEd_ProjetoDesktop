@@ -75,6 +75,12 @@
     <Compile Include="AtualizacaoDiretor.Designer.cs">
       <DependentUpon>AtualizacaoDiretor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtualizacaoMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizacaoMonitor.Designer.cs">
+      <DependentUpon>AtualizacaoMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AtualizacaoProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="CadastroDiretor.Designer.cs">
       <DependentUpon>CadastroDiretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroMonitor.Designer.cs">
+      <DependentUpon>CadastroMonitor.cs</DependentUpon>
     </Compile>
     <Compile Include="CadastroProfessor.cs">
       <SubType>Form</SubType>
@@ -125,6 +137,12 @@
     <Compile Include="ExclusaoDiretor.Designer.cs">
       <DependentUpon>ExclusaoDiretor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExclusaoMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExclusaoMonitor.Designer.cs">
+      <DependentUpon>ExclusaoMonitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExclusaoProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Monitor.cs" />
     <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +177,9 @@
     <EmbeddedResource Include="AtualizacaoDiretor.resx">
       <DependentUpon>AtualizacaoDiretor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AtualizacaoMonitor.resx">
+      <DependentUpon>AtualizacaoMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AtualizacaoProfessor.resx">
       <DependentUpon>AtualizacaoProfessor.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +192,9 @@
     <EmbeddedResource Include="CadastroDiretor.resx">
       <DependentUpon>CadastroDiretor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastroMonitor.resx">
+      <DependentUpon>CadastroMonitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroProfessor.resx">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoDiretor.resx">
       <DependentUpon>ExclusaoDiretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoMonitor.resx">
+      <DependentUpon>ExclusaoMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoProfessor.resx">
       <DependentUpon>ExclusaoProfessor.cs</DependentUpon>

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblExcluir = new System.Windows.Forms.Label();
-            this.txtExcluir = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtExcluir = new System.Windows.Forms.TextBox();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,24 +46,6 @@
             this.panel1.Size = new System.Drawing.Size(674, 342);
             this.panel1.TabIndex = 0;
             // 
-            // lblExcluir
-            // 
-            this.lblExcluir.AutoSize = true;
-            this.lblExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.Location = new System.Drawing.Point(104, 70);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(86, 17);
-            this.lblExcluir.TabIndex = 0;
-            this.lblExcluir.Text = "Digite o NR:";
-            // 
-            // txtExcluir
-            // 
-            this.txtExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExcluir.Location = new System.Drawing.Point(219, 65);
-            this.txtExcluir.Name = "txtExcluir";
-            this.txtExcluir.Size = new System.Drawing.Size(338, 25);
-            this.txtExcluir.TabIndex = 1;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Crimson;
@@ -77,11 +59,29 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             // 
+            // txtExcluir
+            // 
+            this.txtExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExcluir.Location = new System.Drawing.Point(219, 65);
+            this.txtExcluir.Name = "txtExcluir";
+            this.txtExcluir.Size = new System.Drawing.Size(338, 25);
+            this.txtExcluir.TabIndex = 1;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.Location = new System.Drawing.Point(104, 70);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(86, 17);
+            this.lblExcluir.TabIndex = 0;
+            this.lblExcluir.Text = "Digite o NR:";
+            // 
             // ExclusaoDiretor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "ExclusaoDiretor";

@@ -49,7 +49,9 @@ namespace SharEd_Desktop
 
         private void monitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CadastroMonitor filho = new CadastroMonitor();
+            filho.MdiParent = this;
+            filho.Show();
         }
 
         private void professorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,6 +157,20 @@ namespace SharEd_Desktop
         private void alunoToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void monitorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AtualizacaoMonitor filho = new AtualizacaoMonitor();
+            filho.MdiParent = this;
+            filho.Show();
+        }
+
+        private void monitorToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ExclusaoMonitor filho = new ExclusaoMonitor();
+            filho.MdiParent = this;
+            filho.Show();
         }
     }
 }

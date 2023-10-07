@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxMateria = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cbxSeries = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.lblRg = new System.Windows.Forms.Label();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.cbxMateria = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(688, 336);
             this.panel1.TabIndex = 0;
+            // 
+            // cbxMateria
+            // 
+            this.cbxMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMateria.FormattingEnabled = true;
+            this.cbxMateria.Location = new System.Drawing.Point(433, 107);
+            this.cbxMateria.Name = "cbxMateria";
+            this.cbxMateria.Size = new System.Drawing.Size(155, 25);
+            this.cbxMateria.TabIndex = 14;
             // 
             // btnCadastrar
             // 
@@ -204,20 +213,11 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
-            // cbxMateria
-            // 
-            this.cbxMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Location = new System.Drawing.Point(433, 107);
-            this.cbxMateria.Name = "cbxMateria";
-            this.cbxMateria.Size = new System.Drawing.Size(155, 25);
-            this.cbxMateria.TabIndex = 14;
-            // 
             // CadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroProfessor";
