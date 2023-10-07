@@ -136,7 +136,7 @@ namespace SharEd_Desktop
             if (tipo == 2)
             {
                 groupBox1.Visible = false;
-                menuStrip1.Enabled = true;
+                menuStrip1.Visible = true;
                 administradorToolStripMenuItem1.Enabled = false;
                 administradorToolStripMenuItem2.Enabled = false;
                 administradorToolStripMenuItem3.Enabled = false;

@@ -42,12 +42,16 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.txtSenha);
+            this.panel1.Controls.Add(this.lblSenha);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.txtRg);
@@ -71,7 +75,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(139, 215);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(423, 25);
+            this.txtEmail.Size = new System.Drawing.Size(211, 25);
             this.txtEmail.TabIndex = 12;
             // 
             // txtTelefone
@@ -194,6 +198,24 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(366, 218);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(54, 17);
+            this.lblSenha.TabIndex = 13;
+            this.lblSenha.Text = "Senha:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(426, 216);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(136, 25);
+            this.txtSenha.TabIndex = 14;
+            // 
             // CadastroAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,5 +247,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNr;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label lblSenha;
     }
 }

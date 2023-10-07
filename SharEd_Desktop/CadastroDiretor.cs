@@ -24,7 +24,12 @@ namespace SharEd_Desktop
                 int ra = int.Parse(txtNr.Text);
                 Diretor diretor = new Diretor(txtNome.Text, txtRg.Text, txtEmail.Text, cbxCargo.Text, txtTelefone.Text, ra);
                 if (diretor.cadastrarDiretor())
+                {
+                    int tipo = 2;
+                    DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
                     MessageBox.Show("Cadastro realizado com sucesso!");
+                }
+                    
                 else
                     MessageBox.Show("Erro no cadastro!");
             }

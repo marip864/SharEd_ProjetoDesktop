@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SharEd_Desktop
 {
@@ -25,7 +26,12 @@ namespace SharEd_Desktop
                 int nr = int.Parse(txtNr.Text);
                 Administrador admin = new Administrador(txtNome.Text, txtRg.Text, cbxCargo.Text, txtTelefone.Text, txtEmail.Text, nr);
                 if (admin.cadastrarAdministrador())
+                {
+                    int tipo = 1;
+                    DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
                     MessageBox.Show("Cadastro realizado com sucesso!");
+                }
+                    
                 else
                     MessageBox.Show("Erro no cadastro!");
             }
@@ -34,5 +40,6 @@ namespace SharEd_Desktop
                 MessageBox.Show("Preencha todos os campos!");
             }
         }
+
     }
 }
