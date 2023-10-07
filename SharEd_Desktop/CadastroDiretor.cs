@@ -16,5 +16,22 @@ namespace SharEd_Desktop
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ra = int.Parse(txtNr.Text);
+                Diretor diretor = new Diretor(txtNome.Text, txtRg.Text, txtEmail.Text, cbxCargo.Text, txtTelefone.Text, ra);
+                if (diretor.cadastrarDiretor())
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                else
+                    MessageBox.Show("Erro no cadastro!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Preencha todos os campos!");
+            }
+        }
     }
 }

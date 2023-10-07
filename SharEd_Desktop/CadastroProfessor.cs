@@ -16,5 +16,22 @@ namespace SharEd_Desktop
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int nr = int.Parse(txtNr.Text);
+                Professor prof = new Professor(txtNome.Text, txtRg.Text, cbxSeries.Text, cbxMateria.Text, txtTelefone.Text, txtEmail.Text, nr);
+                if (prof.cadastrarProfessor())
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                else
+                    MessageBox.Show("Erro no cadastro!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Preencha todos os campos!");
+            }
+        }
     }
 }

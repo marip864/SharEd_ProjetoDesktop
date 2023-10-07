@@ -12,6 +12,11 @@ namespace SharEd_Desktop
         private String nome, rg, cargo, telefone, email;
         private int nr;
 
+        public Administrador(int nr)
+        {
+            Nr = nr;
+        }
+
         public Administrador(string nome, string rg, string cargo, string telefone, string email, int nr)
         {
             Nome = nome;
