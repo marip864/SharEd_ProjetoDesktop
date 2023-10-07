@@ -29,10 +29,12 @@ namespace SharEd_Desktop
                 {
                     txtNome.Text = dr["nome"].ToString();
                     txtRa.Text = dr["ra"].ToString();
-                    txtSerie.Text = dr["serie"].ToString();
-                    txtNascimento.Text = dr["nascimento"].ToString();
-                    txtTelefone.Text = dr["telefone"].ToString();
-                    txtEmail.Text = dr["email"].ToString();
+                    txtSerie.Text = dr["classe"].ToString();
+                    txtNascimento.Text = dr["dataNascimento"].ToString();
+                    txtTelefone.Text = dr["celular"].ToString();
+                    txtEmail.Text = dr["emailInstitucional"].ToString();
+                    txtRg.Enabled = false;
+                    txtRa.Enabled = false;
                 }
                 else
                 {

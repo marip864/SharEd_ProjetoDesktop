@@ -16,5 +16,23 @@ namespace SharEd_Desktop
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ra = int.Parse(txtRa.Text);
+                int serie = int.Parse(cbxSerie.Text);
+                Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, cbxDisciplina.Text, ra, serie);
+                if (monitor.cadastrarMonitor())
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                else
+                    MessageBox.Show("Erro no cadastro!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Preencha todos os campos!");
+            }
+        }
     }
 }

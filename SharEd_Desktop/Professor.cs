@@ -12,6 +12,12 @@ namespace SharEd_Desktop
     class Professor
     {
         private String nome, rg, series, materias, telefone, email;
+
+        public Professor(string rg)
+        {
+            Rg = rg;
+        }
+
         private int nr;
 
         public Professor(string nome, string rg, string series, string materias, string telefone, string email, int nr)
@@ -31,7 +37,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Professor (numero,nome,email,rg,materia,serie) values (" + Nr + ",'" + Nome + "','" + Email + "','" + Rg + "','" + Materias + "','" + Series + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Professor (numero,nome,email,rg,materia,serie,telefone) values (" + Nr + ",'" + Nome + "','" + Email + "','" + Rg + "','" + Materias + "','" + Series + "','" + Telefone + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -52,7 +58,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', serie = '" + Series + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', serie = '" + Series + "', telefone = '" + Telefone + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -90,13 +96,13 @@ namespace SharEd_Desktop
             return existe;
         }
 
-        public MySqlDataReader consultarDiretor01()
+        public MySqlDataReader consultarProfessor01()
         {
             MySqlDataReader resultado = null;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Professor where numero ='" + Nr + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Professor where rg ='" + Rg + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

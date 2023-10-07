@@ -14,9 +14,9 @@ namespace SharEd_Desktop
     {
         private String nome,rg,nascimento,telefone,email;
 
-        public Aluno(string nome)
+        public Aluno(string rg)
         {
-            Nome = nome;
+            Rg = rg;
         }
 
         private int ra,serie;

@@ -107,7 +107,7 @@
             // txtRg
             // 
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRg.Location = new System.Drawing.Point(398, 51);
+            this.txtRg.Location = new System.Drawing.Point(136, 51);
             this.txtRg.Mask = "00,000,000-0";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(192, 25);
@@ -117,7 +117,7 @@
             // txtRa
             // 
             this.txtRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRa.Location = new System.Drawing.Point(136, 51);
+            this.txtRa.Location = new System.Drawing.Point(423, 51);
             this.txtRa.Name = "txtRa";
             this.txtRa.Size = new System.Drawing.Size(167, 25);
             this.txtRa.TabIndex = 9;
@@ -167,7 +167,7 @@
             // 
             this.lblRg.AutoSize = true;
             this.lblRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRg.Location = new System.Drawing.Point(349, 54);
+            this.lblRg.Location = new System.Drawing.Point(86, 54);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(34, 17);
             this.lblRg.TabIndex = 4;
@@ -197,7 +197,7 @@
             // 
             this.lblRa.AutoSize = true;
             this.lblRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRa.Location = new System.Drawing.Point(88, 54);
+            this.lblRa.Location = new System.Drawing.Point(378, 54);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(32, 17);
             this.lblRa.TabIndex = 1;

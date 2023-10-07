@@ -10,6 +10,23 @@ namespace SharEd_Desktop
     class Monitor
     {
         private String nome, rg, nascimento, telefone, email, area;
+
+        public Monitor(string rg)
+        {
+            Rg = rg;
+        }
+
+        public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, int serie) 
+        {
+            Rg = rg;
+            Nascimento = nascimento;
+            Telefone = telefone;
+            Email = email;
+            Area = area;
+            Ra = ra;
+            Serie = serie;
+        }
+
         private int ra, serie;
 
         public bool cadastrarMonitor()
