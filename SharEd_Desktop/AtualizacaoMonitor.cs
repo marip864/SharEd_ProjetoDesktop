@@ -58,10 +58,47 @@ namespace SharEd_Desktop
         {
             int ra = int.Parse(txtRa.Text);
             int serie = int.Parse(txtSerie.Text);
-            Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, txtDisciplina.Text, ra, serie);
+            Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, txtDisciplina.Text, ra, txtSerie.Text);
             if (monitor.atualizarMonitor())
             {
                 MessageBox.Show("Atualização realizada com sucesso!");
+            }
+        }
+
+        private void txtRa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (e.KeyChar == 13)
+            {
+                Monitor monitor = new Monitor(int.Parse(txtRa.Text));
+                MySqlDataReader dr = monitor.consultarMonitor01();
+                if (dr.Read())
+                {
+                    txtNome.Text = dr["nome"].ToString();
+                    txtRg.Text = dr["rg"].ToString();
+                    txtSerie.Text = dr["classe"].ToString();
+                    txtNascimento.Text = dr["dataNascimento"].ToString();
+                    txtTelefone.Text = dr["celular"].ToString();
+                    txtEmail.Text = dr["emailInstitucional"].ToString();
+                    txtDisciplina.Text = dr["area"].ToString();
+                    txtRg.Enabled = false;
+                    txtRa.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Monitor não cadastrado!");
+                }
+                DAO_Conexao.con.Close();
+                /*int n = aluno.verificaAtivo();
+                if (n == 1)
+                {
+                    button2.Enabled = true;
+                }
+                else
+                {
+                    button2.Enabled = false;
+                }*/
+
             }
         }
     }

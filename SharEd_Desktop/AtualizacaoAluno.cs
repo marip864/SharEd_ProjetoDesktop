@@ -21,9 +21,10 @@ namespace SharEd_Desktop
 
         private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Aluno aluno = new Aluno(txtRg.Text);
+            
             if (e.KeyChar == 13)
             {
+                Aluno aluno = new Aluno(txtRg.Text);
                 MySqlDataReader dr = aluno.consultarAluno01();
                 if (dr.Read())
                 {
@@ -62,6 +63,42 @@ namespace SharEd_Desktop
             if (aluno.atualizarAluno())
             {
                 MessageBox.Show("Atualização realizada com sucesso!");
+            }
+        }
+
+        private void txtRa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (e.KeyChar == 13)
+            {
+                Aluno aluno = new Aluno(int.Parse(txtRa.Text));
+                MySqlDataReader dr = aluno.consultarAluno02();
+                if (dr.Read())
+                {
+                    txtNome.Text = dr["nome"].ToString();
+                    txtRg.Text = dr["rg"].ToString();
+                    txtSerie.Text = dr["classe"].ToString();
+                    txtNascimento.Text = dr["dataNascimento"].ToString();
+                    txtTelefone.Text = dr["celular"].ToString();
+                    txtEmail.Text = dr["emailInstitucional"].ToString();
+                    txtRg.Enabled = false;
+                    txtRa.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Aluno não cadastrado!");
+                }
+                DAO_Conexao.con.Close();
+                /*int n = aluno.verificaAtivo();
+                if (n == 1)
+                {
+                    button2.Enabled = true;
+                }
+                else
+                {
+                    button2.Enabled = false;
+                }*/
+
             }
         }
     }

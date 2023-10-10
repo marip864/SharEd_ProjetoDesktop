@@ -132,6 +132,7 @@
             this.txtRa.Name = "txtRa";
             this.txtRa.Size = new System.Drawing.Size(157, 25);
             this.txtRa.TabIndex = 10;
+            this.txtRa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRa_KeyPress);
             // 
             // txtNome
             // 

@@ -22,8 +22,9 @@ namespace SharEd_Desktop
             try
             {
                 int ra = int.Parse(txtRa.Text);
-                int serie = int.Parse(cbxSerie.Text);
-                Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, cbxDisciplina.Text, ra, serie);
+                
+                MessageBox.Show("Deu certo o selected item");
+                Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, cbxDisciplina.Text, ra, cbxSerie.Text);
                 if (monitor.cadastrarMonitor())
                     MessageBox.Show("Cadastro realizado com sucesso!");
                 else

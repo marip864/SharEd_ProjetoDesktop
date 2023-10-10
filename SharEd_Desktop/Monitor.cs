@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SharEd_Desktop
 {
     class Monitor
     {
-        private String nome, rg, nascimento, telefone, email, area;
+        private String nome, rg, nascimento, telefone, email, area, serie;
 
         public Monitor(string rg)
         {
             Rg = rg;
         }
 
-        public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, int serie) 
+        public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, string serie) 
         {
             Rg = rg;
             Nascimento = nascimento;
@@ -27,7 +28,12 @@ namespace SharEd_Desktop
             Serie = serie;
         }
 
-        private int ra, serie;
+        private int ra;
+
+        public Monitor(int ra)
+        {
+            Ra = ra;
+        }
 
         public bool cadastrarMonitor()
         {
@@ -36,6 +42,7 @@ namespace SharEd_Desktop
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Monitor (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe,area) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "','" + Serie + "','" + Area + "')", DAO_Conexao.con);
+                MessageBox.Show("PAssou Aqui");
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -180,7 +187,7 @@ namespace SharEd_Desktop
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }
         public int Ra { get => ra; set => ra = value; }
-        public int Serie { get => serie; set => serie = value; }
+        public string Serie { get => serie; set => serie = value; }
         public string Area { get => area; set => area = value; }
     }
 
