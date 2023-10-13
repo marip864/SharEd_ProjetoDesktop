@@ -76,7 +76,7 @@
             this.validarConteúdoToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,7 +89,7 @@
             this.administradorToolStripMenuItem,
             this.administradorToolStripMenuItem1});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // alunoToolStripMenuItem1
@@ -136,7 +136,7 @@
             this.diretorToolStripMenuItem,
             this.administradorToolStripMenuItem2});
             this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
-            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.atualizarToolStripMenuItem.Text = "Atualizar";
             // 
             // alunoToolStripMenuItem2
@@ -183,7 +183,7 @@
             this.diretorToolStripMenuItem1,
             this.administradorToolStripMenuItem3});
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
             this.alunoToolStripMenuItem.Text = "Excluir";
             // 
             // alunoToolStripMenuItem3
@@ -230,67 +230,67 @@
             this.diretorToolStripMenuItem2,
             this.administradorToolStripMenuItem4});
             this.validarConteúdoToolStripMenuItem.Name = "validarConteúdoToolStripMenuItem";
-            this.validarConteúdoToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.validarConteúdoToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
             this.validarConteúdoToolStripMenuItem.Text = "Consultar";
             // 
             // alunoToolStripMenuItem4
             // 
             this.alunoToolStripMenuItem4.Name = "alunoToolStripMenuItem4";
-            this.alunoToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.alunoToolStripMenuItem4.Size = new System.Drawing.Size(187, 26);
             this.alunoToolStripMenuItem4.Text = "Aluno";
             this.alunoToolStripMenuItem4.Click += new System.EventHandler(this.alunoToolStripMenuItem4_Click);
             // 
             // monitorToolStripMenuItem3
             // 
             this.monitorToolStripMenuItem3.Name = "monitorToolStripMenuItem3";
-            this.monitorToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.monitorToolStripMenuItem3.Size = new System.Drawing.Size(187, 26);
             this.monitorToolStripMenuItem3.Text = "Monitor";
             this.monitorToolStripMenuItem3.Click += new System.EventHandler(this.monitorToolStripMenuItem3_Click);
             // 
             // professorToolStripMenuItem3
             // 
             this.professorToolStripMenuItem3.Name = "professorToolStripMenuItem3";
-            this.professorToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.professorToolStripMenuItem3.Size = new System.Drawing.Size(187, 26);
             this.professorToolStripMenuItem3.Text = "Professor";
             this.professorToolStripMenuItem3.Click += new System.EventHandler(this.professorToolStripMenuItem3_Click);
             // 
             // diretorToolStripMenuItem2
             // 
             this.diretorToolStripMenuItem2.Name = "diretorToolStripMenuItem2";
-            this.diretorToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.diretorToolStripMenuItem2.Size = new System.Drawing.Size(187, 26);
             this.diretorToolStripMenuItem2.Text = "Diretor";
             this.diretorToolStripMenuItem2.Click += new System.EventHandler(this.diretorToolStripMenuItem2_Click);
             // 
             // administradorToolStripMenuItem4
             // 
             this.administradorToolStripMenuItem4.Name = "administradorToolStripMenuItem4";
-            this.administradorToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.administradorToolStripMenuItem4.Size = new System.Drawing.Size(187, 26);
             this.administradorToolStripMenuItem4.Text = "Administrador";
             this.administradorToolStripMenuItem4.Click += new System.EventHandler(this.administradorToolStripMenuItem4_Click);
             // 
             // validarConteúdoToolStripMenuItem1
             // 
             this.validarConteúdoToolStripMenuItem1.Name = "validarConteúdoToolStripMenuItem1";
-            this.validarConteúdoToolStripMenuItem1.Size = new System.Drawing.Size(138, 24);
+            this.validarConteúdoToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
             this.validarConteúdoToolStripMenuItem1.Text = "Validar Conteúdo";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.groupBox1.BackColor = System.Drawing.Color.RoyalBlue;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.lblSenha);
             this.groupBox1.Controls.Add(this.lblNome);
-            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(52, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(675, 323);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Login";
+            this.groupBox1.Text = "Seja bem-vindo!";
             // 
             // label1
             // 
@@ -302,6 +302,7 @@
             this.label1.Size = new System.Drawing.Size(184, 69);
             this.label1.TabIndex = 5;
             this.label1.Text = "           ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogin
             // 
@@ -366,6 +367,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bem vindo ao Shar.Ed!";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

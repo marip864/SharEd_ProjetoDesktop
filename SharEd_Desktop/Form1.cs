@@ -15,13 +15,13 @@ namespace SharEd_Desktop
     {
         public TelaInicial()
         {
-            /*Thread thread = new Thread(new ThreadStart(SplashScreen));
+            Thread thread = new Thread(new ThreadStart(splashScreen));
             thread.Start();
-            Thread.Sleep(5000);*/
+            Thread.Sleep(5000); 
 
             InitializeComponent();
 
-            /*thread.Abort();*/
+            thread.Abort();
 
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202239", "cl202239", "@marip.864_frozen0905"))
                 Console.WriteLine("Conectado");
@@ -31,6 +31,11 @@ namespace SharEd_Desktop
             menuStrip1.Visible = false;
 
             
+        }
+
+        private void splashScreen()
+        {
+            Application.Run(new SplashScreen());
         }
 
         private void administradorToolStripMenuItem_Click(object sender, EventArgs e)
