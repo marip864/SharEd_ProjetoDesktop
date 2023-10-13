@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtNr = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
@@ -50,10 +50,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.maskedTextBox1);
+            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.txtRg);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtCargo);
+            this.panel1.Controls.Add(this.txtNr);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.lblTelefone);
             this.panel1.Controls.Add(this.lblCargo);
@@ -77,6 +77,7 @@
             this.btnAtualizar.TabIndex = 12;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // txtEmail
             // 
@@ -86,14 +87,14 @@
             this.txtEmail.Size = new System.Drawing.Size(452, 25);
             this.txtEmail.TabIndex = 11;
             // 
-            // maskedTextBox1
+            // txtTelefone
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(433, 155);
-            this.maskedTextBox1.Mask = "(00) 00000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(166, 25);
-            this.maskedTextBox1.TabIndex = 10;
+            this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(433, 155);
+            this.txtTelefone.Mask = "(00) 00000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(166, 25);
+            this.txtTelefone.TabIndex = 10;
             // 
             // txtRg
             // 
@@ -104,26 +105,27 @@
             this.txtRg.Size = new System.Drawing.Size(186, 25);
             this.txtRg.TabIndex = 9;
             // 
-            // textBox2
+            // txtCargo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(433, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 25);
-            this.textBox2.TabIndex = 8;
+            this.txtCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(433, 57);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(166, 25);
+            this.txtCargo.TabIndex = 8;
             // 
-            // textBox1
+            // txtNr
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 25);
-            this.textBox1.TabIndex = 7;
+            this.txtNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNr.Location = new System.Drawing.Point(147, 57);
+            this.txtNr.Name = "txtNr";
+            this.txtNr.Size = new System.Drawing.Size(186, 25);
+            this.txtNr.TabIndex = 7;
+            this.txtNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNr_KeyPress);
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(147, 56);
+            this.txtNome.Location = new System.Drawing.Point(147, 105);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(452, 25);
             this.txtNome.TabIndex = 6;
@@ -142,7 +144,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(361, 113);
+            this.lblCargo.Location = new System.Drawing.Point(361, 60);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(52, 17);
             this.lblCargo.TabIndex = 4;
@@ -172,7 +174,7 @@
             // 
             this.lblNr.AutoSize = true;
             this.lblNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNr.Location = new System.Drawing.Point(98, 113);
+            this.lblNr.Location = new System.Drawing.Point(98, 61);
             this.lblNr.Name = "lblNr";
             this.lblNr.Size = new System.Drawing.Size(33, 17);
             this.lblNr.TabIndex = 1;
@@ -182,7 +184,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(80, 59);
+            this.lblNome.Location = new System.Drawing.Point(80, 108);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(51, 17);
             this.lblNome.TabIndex = 0;
@@ -208,10 +210,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtRg;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtNr;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblCargo;

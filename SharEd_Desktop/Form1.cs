@@ -117,7 +117,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoDiretor filho = new AtualizacaoDiretor();
+                AtualizacaoAdministrador filho = new AtualizacaoAdministrador(1);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -127,7 +127,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoAluno filho = new AtualizacaoAluno();
+                AtualizacaoAluno filho = new AtualizacaoAluno(1);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -137,7 +137,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoProfessor filho = new AtualizacaoProfessor();
+                AtualizacaoProfessor filho = new AtualizacaoProfessor(1);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -202,7 +202,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoMonitor filho = new AtualizacaoMonitor();
+                AtualizacaoMonitor filho = new AtualizacaoMonitor(1);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -222,7 +222,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoAluno filho = new AtualizacaoAluno();
+                AtualizacaoAluno filho = new AtualizacaoAluno(2);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -232,7 +232,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoMonitor filho = new AtualizacaoMonitor();
+                AtualizacaoMonitor filho = new AtualizacaoMonitor(2);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -242,7 +242,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoProfessor filho = new AtualizacaoProfessor();
+                AtualizacaoProfessor filho = new AtualizacaoProfessor(2);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -252,7 +252,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoDiretor filho = new AtualizacaoDiretor();
+                AtualizacaoDiretor filho = new AtualizacaoDiretor(2);
                 filho.MdiParent = this;
                 filho.Show();
             }
@@ -262,7 +262,7 @@ namespace SharEd_Desktop
         {
             if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
             {
-                AtualizacaoAdministrador filho = new AtualizacaoAdministrador();
+                AtualizacaoAdministrador filho = new AtualizacaoAdministrador(2);
                 filho.MdiParent = this;
                 filho.Show();
             }

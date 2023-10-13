@@ -12,6 +12,11 @@ namespace SharEd_Desktop
         private String nome, rg, email, cargo, telefone;
         private int nr;
 
+        public Diretor(int nr)
+        {
+            Nr = nr;
+        }
+
         public Diretor(string nome, string rg, string email, string cargo, string telefone, int nr)
         {
             Nome = nome;
@@ -49,7 +54,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update MembroDirecao set nome='" + Nome + "', email='" + Email + "', cargo='" + Cargo + "', rg='" + Rg + "', ramal='" + Telefone + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update MembroDirecao set nome='" + Nome + "', email='" + Email + "', cargo='" + Cargo + "', rg='" + Rg + "', ramal='" + Telefone + "' where numRegistro ="+Nr+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -102,6 +107,8 @@ namespace SharEd_Desktop
             }
             return resultado;
         }
+
+
 
         public int verificaAtivo()
         {

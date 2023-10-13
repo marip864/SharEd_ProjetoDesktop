@@ -13,9 +13,19 @@ namespace SharEd_Desktop
 {
     public partial class AtualizacaoProfessor : Form
     {
-        public AtualizacaoProfessor()
+        int opcao = 0;
+        public AtualizacaoProfessor(int op)
         {
             InitializeComponent();
+            if (op == 1)
+            {
+                opcao = 1;
+            }
+            if (op == 2)
+            {
+                btnAtualizar.Visible = false;
+                opcao = 2;
+            }
         }
 
         private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
@@ -35,6 +45,16 @@ namespace SharEd_Desktop
                     txtSerie.Text = dr["serie"].ToString();
                     txtRg.Enabled = false;
                     txtNr.Enabled = false;
+                    if(opcao == 2)
+                    {
+                        txtNome.Enabled = false;
+                        txtNr.Enabled = false;
+                        txtSerie.Enabled = false;
+                        txtEmail.Enabled = false;
+                        txtMaterias.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtSerie.Enabled = false;
+                    }
                 }
                 else
                 {
@@ -61,6 +81,41 @@ namespace SharEd_Desktop
             if (prof.atualizarProfessor())
             {
                 MessageBox.Show("Atualização realizada com sucesso!");
+            }
+        }
+
+        private void txtNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Professor professor = new Professor(int.Parse(txtNr.Text));
+                MySqlDataReader dr = professor.consultaProfessor02();
+                if (dr.Read())
+                {
+                    txtNome.Text = dr["nome"].ToString();
+                    txtRg.Text = dr["rg"].ToString();
+                    txtSerie.Text = dr["serie"].ToString();
+                    txtMaterias.Text = dr["materia"].ToString();
+                    txtTelefone.Text = dr["telefone"].ToString();
+                    txtEmail.Text = dr["email"].ToString();
+                    txtRg.Enabled = false;
+                    txtNr.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Professor não cadastrado!");
+                }
+                DAO_Conexao.con.Close();
+                /*int n = aluno.verificaAtivo();
+                if (n == 1)
+                {
+                    button2.Enabled = true;
+                }
+                else
+                {
+                    button2.Enabled = false;
+                }*/
+
             }
         }
     }

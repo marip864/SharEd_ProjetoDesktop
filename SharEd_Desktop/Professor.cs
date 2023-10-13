@@ -20,6 +20,11 @@ namespace SharEd_Desktop
 
         private int nr;
 
+        public Professor(int nr)
+        {
+           Nr = nr;
+        }
+
         public Professor(string nome, string rg, string series, string materias, string telefone, string email, int nr)
         {
             Nome = nome;
@@ -58,7 +63,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', serie = '" + Series + "', telefone = '" + Telefone + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', serie = '" + Series + "', telefone = '" + Telefone + "' where numero ="+Nr+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -103,6 +108,22 @@ namespace SharEd_Desktop
             {
                 DAO_Conexao.con.Open();
                 MySqlCommand consulta = new MySqlCommand("select * from Professor where rg ='" + Rg + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public MySqlDataReader consultaProfessor02()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Professor where numero =" + Nr + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

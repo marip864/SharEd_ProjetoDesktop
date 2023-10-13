@@ -98,7 +98,7 @@
             // txtRg
             // 
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRg.Location = new System.Drawing.Point(146, 52);
+            this.txtRg.Location = new System.Drawing.Point(419, 54);
             this.txtRg.Mask = "00,000,000-0";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(178, 25);
@@ -116,10 +116,11 @@
             // txtNr
             // 
             this.txtNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNr.Location = new System.Drawing.Point(419, 52);
+            this.txtNr.Location = new System.Drawing.Point(146, 52);
             this.txtNr.Name = "txtNr";
             this.txtNr.Size = new System.Drawing.Size(178, 25);
             this.txtNr.TabIndex = 9;
+            this.txtNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNr_KeyPress);
             // 
             // txtNome
             // 
@@ -186,7 +187,7 @@
             // 
             this.lblRg.AutoSize = true;
             this.lblRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRg.Location = new System.Drawing.Point(95, 57);
+            this.lblRg.Location = new System.Drawing.Point(374, 59);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(34, 17);
             this.lblRg.TabIndex = 2;
@@ -196,7 +197,7 @@
             // 
             this.lblNr.AutoSize = true;
             this.lblNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNr.Location = new System.Drawing.Point(369, 55);
+            this.lblNr.Location = new System.Drawing.Point(96, 57);
             this.lblNr.Name = "lblNr";
             this.lblNr.Size = new System.Drawing.Size(33, 17);
             this.lblNr.TabIndex = 1;

@@ -63,7 +63,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Monitor set nome='" + Nome + "', celular='" + Telefone + "', rg='" + Rg + "', emailInstitucional='" + Email + "', dataNascimento='" + Nascimento + "', classe='" + Serie + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Monitor set nome='" + Nome + "', celular='" + Telefone + "', rg='" + Rg + "', emailInstitucional='" + Email + "', dataNascimento='" + Nascimento + "', classe='" + Serie + "' where ra ="+Ra+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }

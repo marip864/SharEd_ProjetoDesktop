@@ -52,7 +52,7 @@ namespace SharEd_Desktop
 
         private void alunoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AtualizacaoAluno filho = new AtualizacaoAluno();
+            AtualizacaoAluno filho = new AtualizacaoAluno(1);
             filho.MdiParent = this;
             filho.Show();
         }
@@ -64,21 +64,21 @@ namespace SharEd_Desktop
 
         private void professorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AtualizacaoProfessor filho = new AtualizacaoProfessor();
+            AtualizacaoProfessor filho = new AtualizacaoProfessor(1);
             filho.MdiParent = this;
             filho.Show();
         }
 
         private void diretorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AtualizacaoDiretor filho = new AtualizacaoDiretor();
+            AtualizacaoDiretor filho = new AtualizacaoDiretor(1);
             filho.MdiParent = this;
             filho.Show();
         }
 
         private void administradorToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            AtualizacaoAdministrador filho = new AtualizacaoAdministrador();
+            AtualizacaoAdministrador filho = new AtualizacaoAdministrador(1);
             filho.MdiParent = this;
             filho.Show();
         }

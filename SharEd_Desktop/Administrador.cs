@@ -54,7 +54,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Administrador set nome='" + Nome + "', emailInstitucional='" + Email + "', cargo='" + Cargo + "', rg='" + Rg + "', ramal='" + Telefone + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Administrador set nome='" + Nome + "', emailInstitucional='" + Email + "', cargo='" + Cargo + "', rg='" + Rg + "', ramal='" + Telefone + "' where numRegistro ="+Nr+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }

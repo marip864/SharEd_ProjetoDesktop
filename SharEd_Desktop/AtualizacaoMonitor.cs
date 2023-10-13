@@ -13,44 +13,18 @@ namespace SharEd_Desktop
 {
     public partial class AtualizacaoMonitor : Form
     {
-        public AtualizacaoMonitor()
+        int opcao = 0;
+        public AtualizacaoMonitor(int op)
         {
             InitializeComponent();
-        }
-
-        private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Monitor monitor = new Monitor(txtRg.Text);
-            if (e.KeyChar == 13)
+            if (op == 1)
             {
-                MySqlDataReader dr = monitor.consultarMonitor01();
-                if (dr.Read())
-                {
-                    txtNome.Text = dr["nome"].ToString();
-                    txtRa.Text = dr["ra"].ToString();
-                    txtSerie.Text = dr["classe"].ToString();
-                    txtNascimento.Text = dr["dataNascimento"].ToString();
-                    txtTelefone.Text = dr["celular"].ToString();
-                    txtEmail.Text = dr["emailInstitucional"].ToString();
-                    txtDisciplina.Text = dr["area"].ToString();
-                    txtRg.Enabled = false;
-                    txtRa.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("Monitor não cadastrado!");
-                }
-                DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
-
+                opcao = 1;
+            }
+            if (op == 2)
+            {
+                btnAtualizar.Visible = false;
+                opcao = 2;
             }
         }
 
@@ -83,6 +57,16 @@ namespace SharEd_Desktop
                     txtDisciplina.Text = dr["area"].ToString();
                     txtRg.Enabled = false;
                     txtRa.Enabled = false;
+                    if(opcao==2)
+                    {
+                        txtNome.Enabled = false;
+                        txtRg.Enabled = false;
+                        txtSerie.Enabled = false;
+                        txtNascimento.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtEmail.Enabled = false;
+                        txtDisciplina.Enabled = false;
+                    }
                 }
                 else
                 {

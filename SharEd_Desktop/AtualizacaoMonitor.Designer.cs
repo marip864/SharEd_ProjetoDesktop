@@ -118,17 +118,16 @@
             // txtRg
             // 
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRg.Location = new System.Drawing.Point(142, 53);
+            this.txtRg.Location = new System.Drawing.Point(377, 48);
             this.txtRg.Mask = "00,000,000-0";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(225, 25);
             this.txtRg.TabIndex = 11;
-            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRg_KeyPress);
             // 
             // txtRa
             // 
             this.txtRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRa.Location = new System.Drawing.Point(445, 52);
+            this.txtRa.Location = new System.Drawing.Point(142, 48);
             this.txtRa.Name = "txtRa";
             this.txtRa.Size = new System.Drawing.Size(157, 25);
             this.txtRa.TabIndex = 10;
@@ -189,7 +188,7 @@
             // 
             this.lblRa.AutoSize = true;
             this.lblRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRa.Location = new System.Drawing.Point(392, 55);
+            this.lblRa.Location = new System.Drawing.Point(96, 51);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(32, 17);
             this.lblRa.TabIndex = 4;
@@ -219,7 +218,7 @@
             // 
             this.lblRg.AutoSize = true;
             this.lblRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRg.Location = new System.Drawing.Point(94, 56);
+            this.lblRg.Location = new System.Drawing.Point(328, 51);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(34, 17);
             this.lblRg.TabIndex = 1;
