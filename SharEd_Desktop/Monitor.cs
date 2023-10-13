@@ -17,6 +17,11 @@ namespace SharEd_Desktop
             Rg = rg;
         }
 
+        public Monitor()
+        {
+
+        }
+
         public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, string serie) 
         {
             Rg = rg;
@@ -101,6 +106,22 @@ namespace SharEd_Desktop
             return existe;
         }
 
+        public MySqlDataReader consultarMonitorRa(int ra)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Monitor where ra =" + ra + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
         public MySqlDataReader consultarMonitor01()
         {
             MySqlDataReader resultado = null;
@@ -160,13 +181,13 @@ namespace SharEd_Desktop
             return result;
         }
 
-        public bool excluirMonitor()
+        public bool excluirMonitor(int ra)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Monitor set ativo = 1 where ra = '" + Ra + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Monitor set ativo = 1 where ra = '" + ra + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }

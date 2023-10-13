@@ -82,6 +82,22 @@ namespace SharEd_Desktop
             }
             return cad;
         }
+
+        public MySqlDataReader consultarAlunoRa(int ra)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra =" + ra + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
         public bool consultarAluno()
         {
             bool existe = false;
@@ -181,13 +197,13 @@ namespace SharEd_Desktop
             return result;
         }
 
-        public bool excluirAluno()
+        public bool excluirAluno(int ra)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Aluno set ativo = 1 where ra = '" + Ra + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Aluno set ativo = 1 where ra = '" + ra + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }

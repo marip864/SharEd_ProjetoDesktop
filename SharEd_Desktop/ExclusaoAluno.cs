@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,44 @@ namespace SharEd_Desktop
         public ExclusaoAluno()
         {
             InitializeComponent();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtExcluir.Text != "")
+            {
+                Aluno aluno = new Aluno();
+                aluno.excluirAluno(int.Parse(txtExcluir.Text));
+                MessageBox.Show("Excluído com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Digite um ra para excluir!");
+            }
+            txtExcluir.Text = "";
+            dataGridView1.Rows.Clear();
+        }
+
+        private void txtExcluir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            if (e.KeyChar == 13)
+            {
+                Aluno con_a = new Aluno();
+
+                MySqlDataReader r = con_a.consultarAlunoRa(int.Parse(txtExcluir.Text));
+
+                if (r.Read())
+                {
+                    dataGridView1.Rows.Add(r["nome"].ToString(), r["classe"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Aluno não cadastrado!");
+                }
+
+                DAO_Conexao.con.Close();
+            }
         }
     }
 }

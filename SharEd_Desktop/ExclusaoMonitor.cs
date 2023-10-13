@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,44 @@ namespace SharEd_Desktop
         public ExclusaoMonitor()
         {
             InitializeComponent();
+        }
+
+        private void txtExcluir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            if (e.KeyChar == 13)
+            {
+                Monitor con_m = new Monitor();
+
+                MySqlDataReader r = con_m.consultarMonitorRa(int.Parse(txtExcluir.Text));
+
+                if (r.Read())
+                {
+                    dataGridView1.Rows.Add(r["nome"].ToString(), r["area"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Monitor não cadastrado!");
+                }
+
+                DAO_Conexao.con.Close();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtExcluir.Text != "")
+            {
+                Monitor monitor = new Monitor();
+                monitor.excluirMonitor(int.Parse(txtExcluir.Text));
+                MessageBox.Show("Excluído com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Digite um ra para excluir!");
+            }
+            txtExcluir.Text = "";
+            dataGridView1.Rows.Clear();
         }
     }
 }

@@ -25,6 +25,11 @@ namespace SharEd_Desktop
            Nr = nr;
         }
 
+        public Professor()
+        {
+            
+        }
+
         public Professor(string nome, string rg, string series, string materias, string telefone, string email, int nr)
         {
             Nome = nome;
@@ -117,6 +122,22 @@ namespace SharEd_Desktop
             return resultado;
         }
 
+        public MySqlDataReader consultarProfessor(int nr)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Professor where numero =" + nr + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
         public MySqlDataReader consultaProfessor02()
         {
             MySqlDataReader resultado = null;
@@ -176,13 +197,13 @@ namespace SharEd_Desktop
             return result;
         }
 
-        public bool excluirAluno()
+        public bool excluirProfessor(int nr)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Professor set ativo = 1 where numero = '" + Nr + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Professor set ativo = 1 where numero = '" + nr + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }

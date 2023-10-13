@@ -17,6 +17,11 @@ namespace SharEd_Desktop
             Nr = nr;
         }
 
+        public Diretor()
+        {
+            
+        }
+
         public Diretor(string nome, string rg, string email, string cargo, string telefone, int nr)
         {
             Nome = nome;
@@ -92,6 +97,22 @@ namespace SharEd_Desktop
             return existe;
         }
 
+        public MySqlDataReader consultarDiretorNr(int nr)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from MembroDirecao where numRegistro =" + nr + "", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
         public MySqlDataReader consultarDiretor01()
         {
             MySqlDataReader resultado = null;
@@ -153,13 +174,13 @@ namespace SharEd_Desktop
             return result;
         }
 
-        public bool excluirAluno()
+        public bool excluirDiretor(int nr)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update MembroDirecao set ativo = 1 where numRegistro = '" + Nr + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update MembroDirecao set ativo = 1 where numRegistro = '" + nr + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }
