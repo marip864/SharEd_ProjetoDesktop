@@ -30,6 +30,14 @@ namespace SharEd_Desktop
                     int tipo = 1;
                     DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
                     MessageBox.Show("Cadastro realizado com sucesso!");
+                    txtNome.Text = "";
+                    txtRg.Text = "";
+                    cbxCargo.Text = "";
+                    txtTelefone.Text = "";
+                    txtEmail.Text = "";
+                    txtRg.Text = "";
+                    txtNr.Text = "";
+                    txtSenha.Text = "";
                 }
                     
                 else
@@ -41,5 +49,29 @@ namespace SharEd_Desktop
             }
         }
 
+        private void txtNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==13)
+            {
+                Administrador admin = new Administrador(int.Parse(txtNr.Text));
+                bool existe = admin.consultarAdministrador();
+                if (!existe)
+                {
+                    txtNome.Enabled = true;
+                    txtRg.Enabled = true;
+                    cbxCargo.Enabled = true;
+                    txtTelefone.Enabled = true;
+                    txtEmail.Enabled = true;
+                    txtRg.Enabled = true;
+                    txtNr.Enabled = true;
+                    txtSenha.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Esse administrador já foi cadastrado!");
+                    txtNr.Text = "";
+                }
+            }
+        }
     }
 }

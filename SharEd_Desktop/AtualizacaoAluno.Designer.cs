@@ -72,6 +72,7 @@
             // 
             // txtSerie
             // 
+            this.txtSerie.Enabled = false;
             this.txtSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSerie.Location = new System.Drawing.Point(490, 210);
             this.txtSerie.Name = "txtSerie";
@@ -80,6 +81,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(136, 210);
             this.txtEmail.Name = "txtEmail";
@@ -88,6 +90,7 @@
             // 
             // txtNascimento
             // 
+            this.txtNascimento.Enabled = false;
             this.txtNascimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNascimento.Location = new System.Drawing.Point(456, 159);
             this.txtNascimento.Mask = "00/00/0000";
@@ -97,6 +100,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(136, 158);
             this.txtTelefone.Mask = "(00) 00000-0000";
@@ -106,6 +110,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(398, 57);
             this.txtRg.Mask = "00,000,000-0";
@@ -124,6 +129,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(136, 108);
             this.txtNome.Name = "txtNome";

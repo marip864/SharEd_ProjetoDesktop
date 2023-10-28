@@ -33,5 +33,30 @@ namespace SharEd_Desktop
                 MessageBox.Show("Preencha todos os campos!");
             }
         }
+
+        private void txtNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Professor prof = new Professor(int.Parse(txtNr.Text));
+                bool existe = prof.consultarProfessor();
+                if (!existe)
+                {
+                    txtNome.Enabled = true;
+                    txtRg.Enabled = true;
+                    txtTelefone.Enabled = true;
+                    txtEmail.Enabled = true;
+                    txtRg.Enabled = true;
+                    txtNr.Enabled = true;
+                    cbxMateria.Enabled = true;
+                    cbxSeries.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Esse diretor já foi cadastrado!");
+                    txtNr.Text = "";
+                }
+            }
+        }
     }
 }

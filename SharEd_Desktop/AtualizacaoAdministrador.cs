@@ -54,29 +54,31 @@ namespace SharEd_Desktop
                     txtEmail.Text = dr["emailInstitucional"].ToString();
                     txtRg.Enabled = false;
                     txtNr.Enabled = false;
-                    if(opcao==2)
+                    if(opcao==1)
                     {
-                        txtNome.Enabled = false;
-                        txtRg.Enabled=false;
-                        txtCargo.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtEmail.Enabled = false;
+                        txtNome.Enabled = true;
+                        txtRg.Enabled=true;
+                        txtCargo.Enabled = true;
+                        txtTelefone.Enabled = true;
+                        txtEmail.Enabled = true;
+                    }
+                    int n = admin.verificaAtivo();
+                    if (n == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!");
+                    MessageBox.Show("Administrador não cadastrado!");
+                    txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
+                
 
             }
         }

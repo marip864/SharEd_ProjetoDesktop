@@ -57,20 +57,21 @@ namespace SharEd_Desktop
                     txtDisciplina.Text = dr["area"].ToString();
                     txtRg.Enabled = false;
                     txtRa.Enabled = false;
-                    if(opcao==2)
+                    if(opcao==1)
                     {
-                        txtNome.Enabled = false;
-                        txtRg.Enabled = false;
-                        txtSerie.Enabled = false;
-                        txtNascimento.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtDisciplina.Enabled = false;
+                        txtNome.Enabled = true;
+                        txtRg.Enabled = true;
+                        txtSerie.Enabled = true;
+                        txtNascimento.Enabled = true;
+                        txtTelefone.Enabled = true;
+                        txtEmail.Enabled = true;
+                        txtDisciplina.Enabled = true;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Monitor não cadastrado!");
+                    txtRa.Text = "";
                 }
                 DAO_Conexao.con.Close();
                 /*int n = aluno.verificaAtivo();

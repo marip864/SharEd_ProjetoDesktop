@@ -68,6 +68,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(434, 166);
             this.txtTelefone.Mask = "(00) 00000-0000";
@@ -77,6 +78,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(160, 166);
             this.txtRg.Mask = "00,000,000-0";
@@ -86,6 +88,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(160, 215);
             this.txtEmail.Name = "txtEmail";
@@ -94,6 +97,7 @@
             // 
             // txtCargo
             // 
+            this.txtCargo.Enabled = false;
             this.txtCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargo.Location = new System.Drawing.Point(434, 66);
             this.txtCargo.Name = "txtCargo";
@@ -111,6 +115,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(160, 112);
             this.txtNome.Name = "txtNome";

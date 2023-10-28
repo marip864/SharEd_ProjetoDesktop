@@ -31,6 +31,7 @@ namespace SharEd_Desktop
             Area = area;
             Ra = ra;
             Serie = serie;
+            Nome = nome;
         }
 
         private int ra;
@@ -46,8 +47,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Monitor (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe,area) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "','" + Serie + "','" + Area + "')", DAO_Conexao.con);
-                MessageBox.Show("PAssou Aqui");
+                MySqlCommand insere = new MySqlCommand("insert into Monitor (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe,area,ativo) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "','" + Serie + "','" + Area + "',"+0+")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -106,6 +106,30 @@ namespace SharEd_Desktop
             return existe;
         }
 
+        public bool consultarAlunoparaMonitor(int ra)
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra =" + ra + " and classe!=1", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return existe;
+        }
+
         public MySqlDataReader consultarMonitorRa(int ra)
         {
             MySqlDataReader resultado = null;
@@ -128,7 +152,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Monitor where rg ='" + Rg + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Monitor where ra =" + Ra + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

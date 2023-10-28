@@ -72,9 +72,10 @@
             // 
             // cbxMateria
             // 
+            this.cbxMateria.Enabled = false;
             this.cbxMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Location = new System.Drawing.Point(433, 107);
+            this.cbxMateria.Location = new System.Drawing.Point(433, 53);
             this.cbxMateria.Name = "cbxMateria";
             this.cbxMateria.Size = new System.Drawing.Size(155, 25);
             this.cbxMateria.TabIndex = 14;
@@ -94,8 +95,14 @@
             // 
             // cbxSeries
             // 
+            this.cbxSeries.Enabled = false;
             this.cbxSeries.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSeries.FormattingEnabled = true;
+            this.cbxSeries.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.cbxSeries.Location = new System.Drawing.Point(479, 207);
             this.cbxSeries.Name = "cbxSeries";
             this.cbxSeries.Size = new System.Drawing.Size(109, 25);
@@ -103,6 +110,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(161, 208);
             this.txtEmail.Name = "txtEmail";
@@ -111,6 +119,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(433, 160);
             this.txtTelefone.Mask = "(00) 00000-0000";
@@ -120,6 +129,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(161, 157);
             this.txtRg.Mask = "00,000,000-0";
@@ -130,15 +140,17 @@
             // txtNr
             // 
             this.txtNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNr.Location = new System.Drawing.Point(161, 104);
+            this.txtNr.Location = new System.Drawing.Point(161, 52);
             this.txtNr.Name = "txtNr";
             this.txtNr.Size = new System.Drawing.Size(161, 25);
             this.txtNr.TabIndex = 8;
+            this.txtNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNr_KeyPress);
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(161, 51);
+            this.txtNome.Location = new System.Drawing.Point(161, 106);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(427, 25);
             this.txtNome.TabIndex = 7;
@@ -167,7 +179,7 @@
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria.Location = new System.Drawing.Point(351, 112);
+            this.lblMateria.Location = new System.Drawing.Point(350, 56);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(67, 17);
             this.lblMateria.TabIndex = 4;
@@ -197,7 +209,7 @@
             // 
             this.lblNr.AutoSize = true;
             this.lblNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNr.Location = new System.Drawing.Point(106, 107);
+            this.lblNr.Location = new System.Drawing.Point(105, 56);
             this.lblNr.Name = "lblNr";
             this.lblNr.Size = new System.Drawing.Size(33, 17);
             this.lblNr.TabIndex = 1;
@@ -207,7 +219,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(88, 53);
+            this.lblNome.Location = new System.Drawing.Point(88, 108);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(51, 17);
             this.lblNome.TabIndex = 0;

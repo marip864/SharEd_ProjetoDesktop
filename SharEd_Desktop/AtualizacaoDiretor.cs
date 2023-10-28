@@ -53,18 +53,19 @@ namespace SharEd_Desktop
                     txtEmail.Text = dr["email"].ToString();
                     txtRg.Enabled = false;
                     txtNr.Enabled = false;
-                    if(opcao==2)
+                    if(opcao==1)
                     {
-                        txtNome.Enabled = false;
-                        txtRg.Enabled = false;
-                        txtCargo.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtEmail.Enabled = false;
+                        txtNome.Enabled = true;
+                        txtRg.Enabled = true;
+                        txtCargo.Enabled = true;
+                        txtTelefone.Enabled = true;
+                        txtEmail.Enabled = true;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Diretor não cadastrado!");
+                    txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
                 /*int n = aluno.verificaAtivo();

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -42,8 +44,6 @@
             this.lblNr = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,26 @@
             this.panel1.Size = new System.Drawing.Size(681, 344);
             this.panel1.TabIndex = 0;
             // 
+            // txtSenha
+            // 
+            this.txtSenha.Enabled = false;
+            this.txtSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(469, 218);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(120, 25);
+            this.txtSenha.TabIndex = 14;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(402, 222);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(54, 17);
+            this.lblSenha.TabIndex = 13;
+            this.lblSenha.Text = "Senha:";
+            // 
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.Crimson;
@@ -85,6 +105,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(152, 219);
             this.txtEmail.Name = "txtEmail";
@@ -93,6 +114,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Location = new System.Drawing.Point(412, 168);
             this.txtTelefone.Mask = "(00) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
@@ -101,6 +123,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(152, 167);
             this.txtRg.Mask = "00,000,000-0";
@@ -120,6 +143,7 @@
             // 
             // cbxCargo
             // 
+            this.cbxCargo.Enabled = false;
             this.cbxCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCargo.FormattingEnabled = true;
             this.cbxCargo.Items.AddRange(new object[] {
@@ -127,7 +151,7 @@
             "Diretor(a) de Ensino",
             "Diretor(a) Geral",
             "Vice-Diretor(a)"});
-            this.cbxCargo.Location = new System.Drawing.Point(412, 112);
+            this.cbxCargo.Location = new System.Drawing.Point(412, 60);
             this.cbxCargo.Name = "cbxCargo";
             this.cbxCargo.Size = new System.Drawing.Size(177, 25);
             this.cbxCargo.TabIndex = 7;
@@ -136,7 +160,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargo.Location = new System.Drawing.Point(339, 116);
+            this.lblCargo.Location = new System.Drawing.Point(339, 64);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(52, 17);
             this.lblCargo.TabIndex = 6;
@@ -145,10 +169,11 @@
             // txtNr
             // 
             this.txtNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNr.Location = new System.Drawing.Point(152, 113);
+            this.txtNr.Location = new System.Drawing.Point(152, 60);
             this.txtNr.Name = "txtNr";
             this.txtNr.Size = new System.Drawing.Size(157, 25);
             this.txtNr.TabIndex = 5;
+            this.txtNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNr_KeyPress);
             // 
             // lblEmail
             // 
@@ -174,7 +199,7 @@
             // 
             this.lblNr.AutoSize = true;
             this.lblNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNr.Location = new System.Drawing.Point(98, 115);
+            this.lblNr.Location = new System.Drawing.Point(98, 62);
             this.lblNr.Name = "lblNr";
             this.lblNr.Size = new System.Drawing.Size(33, 17);
             this.lblNr.TabIndex = 2;
@@ -182,8 +207,9 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(152, 59);
+            this.txtNome.Location = new System.Drawing.Point(152, 114);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(437, 25);
             this.txtNome.TabIndex = 1;
@@ -192,30 +218,11 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(80, 62);
+            this.lblNome.Location = new System.Drawing.Point(80, 115);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(51, 17);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(402, 222);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(54, 17);
-            this.lblSenha.TabIndex = 13;
-            this.lblSenha.Text = "Senha:";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(469, 218);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(120, 25);
-            this.txtSenha.TabIndex = 14;
             // 
             // CadastroDiretor
             // 

@@ -89,7 +89,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra =" + ra + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra like " + ra + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

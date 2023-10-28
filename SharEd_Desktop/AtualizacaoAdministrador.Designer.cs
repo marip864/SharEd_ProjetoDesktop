@@ -42,12 +42,14 @@
             this.lblRg = new System.Windows.Forms.Label();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.btnAtivo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.btnAtivo);
             this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtTelefone);
@@ -71,9 +73,9 @@
             this.btnAtualizar.BackColor = System.Drawing.Color.Crimson;
             this.btnAtualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAtualizar.Location = new System.Drawing.Point(266, 261);
+            this.btnAtualizar.Location = new System.Drawing.Point(80, 262);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(136, 37);
+            this.btnAtualizar.Size = new System.Drawing.Size(257, 37);
             this.btnAtualizar.TabIndex = 12;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
@@ -81,6 +83,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(147, 203);
             this.txtEmail.Name = "txtEmail";
@@ -89,6 +92,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(433, 155);
             this.txtTelefone.Mask = "(00) 00000-0000";
@@ -98,6 +102,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(147, 153);
             this.txtRg.Mask = "00,000,000-0";
@@ -107,6 +112,7 @@
             // 
             // txtCargo
             // 
+            this.txtCargo.Enabled = false;
             this.txtCargo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCargo.Location = new System.Drawing.Point(433, 57);
             this.txtCargo.Name = "txtCargo";
@@ -124,6 +130,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(147, 105);
             this.txtNome.Name = "txtNome";
@@ -190,6 +197,18 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
+            // btnAtivo
+            // 
+            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAtivo.Location = new System.Drawing.Point(364, 262);
+            this.btnAtivo.Name = "btnAtivo";
+            this.btnAtivo.Size = new System.Drawing.Size(235, 37);
+            this.btnAtivo.TabIndex = 13;
+            this.btnAtivo.Text = "Ativar Administrador";
+            this.btnAtivo.UseVisualStyleBackColor = false;
+            // 
             // AtualizacaoAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,5 +240,6 @@
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblNr;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Button btnAtivo;
     }
 }

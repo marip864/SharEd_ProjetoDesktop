@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,5 +36,42 @@ namespace SharEd_Desktop
             }
             
         }
+
+        private void txtRA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Aluno aluno = new Aluno(int.Parse(txtRA.Text));
+                bool existe = aluno.consultarAluno();
+                if (!existe)
+                {
+                    txtNome.Enabled = true;
+                    txtRG.Enabled = true;
+                    cbxSerie.Enabled = true;
+                    txtNascimento.Enabled = true;
+                    txtTelefone.Enabled = true;
+                    txtEmail.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Esse aluno já foi cadastrado!");
+                    txtRA.Text = "";
+                }
+           
+            }
+
+            DAO_Conexao.con.Close();
+            /*int n = aluno.verificaAtivo();
+            if (n == 1)
+            {
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+            }*/
+
+        }
     }
+    
 }

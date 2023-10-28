@@ -76,12 +76,13 @@
             // 
             // cbxSerie
             // 
+            this.cbxSerie.Enabled = false;
             this.cbxSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSerie.FormattingEnabled = true;
             this.cbxSerie.Items.AddRange(new object[] {
-            "1° ano",
-            "2° ano",
-            "3° ano"});
+            "2",
+            "3",
+            "4"});
             this.cbxSerie.Location = new System.Drawing.Point(446, 225);
             this.cbxSerie.Name = "cbxSerie";
             this.cbxSerie.Size = new System.Drawing.Size(162, 25);
@@ -89,6 +90,7 @@
             // 
             // cbxDisciplina
             // 
+            this.cbxDisciplina.Enabled = false;
             this.cbxDisciplina.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDisciplina.FormattingEnabled = true;
             this.cbxDisciplina.Items.AddRange(new object[] {
@@ -104,6 +106,7 @@
             // 
             // txtNascimento
             // 
+            this.txtNascimento.Enabled = false;
             this.txtNascimento.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNascimento.Location = new System.Drawing.Point(487, 171);
             this.txtNascimento.Mask = "00/00/0000";
@@ -113,6 +116,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(137, 171);
             this.txtEmail.Name = "txtEmail";
@@ -121,6 +125,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(429, 112);
             this.txtTelefone.Mask = "(00) 00000-0000";
@@ -130,6 +135,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(137, 112);
             this.txtRg.Mask = "00,000,000-0";
@@ -140,17 +146,19 @@
             // txtRa
             // 
             this.txtRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRa.Location = new System.Drawing.Point(490, 63);
+            this.txtRa.Location = new System.Drawing.Point(137, 66);
             this.txtRa.Name = "txtRa";
             this.txtRa.Size = new System.Drawing.Size(121, 25);
             this.txtRa.TabIndex = 10;
+            this.txtRa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRa_KeyPress);
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(137, 63);
+            this.txtNome.Location = new System.Drawing.Point(327, 66);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(296, 25);
+            this.txtNome.Size = new System.Drawing.Size(281, 25);
             this.txtNome.TabIndex = 9;
             // 
             // btnCadastrar
@@ -220,7 +228,7 @@
             // 
             this.lblRa.AutoSize = true;
             this.lblRa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRa.Location = new System.Drawing.Point(443, 66);
+            this.lblRa.Location = new System.Drawing.Point(92, 69);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(32, 17);
             this.lblRa.TabIndex = 2;
@@ -240,7 +248,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(80, 66);
+            this.lblNome.Location = new System.Drawing.Point(269, 69);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(51, 17);
             this.lblNome.TabIndex = 0;

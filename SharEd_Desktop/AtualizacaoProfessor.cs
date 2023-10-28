@@ -100,10 +100,20 @@ namespace SharEd_Desktop
                     txtEmail.Text = dr["email"].ToString();
                     txtRg.Enabled = false;
                     txtNr.Enabled = false;
+                    if (opcao == 1)
+                    {
+                        txtNome.Enabled = true;
+                        txtRg.Enabled = true;
+                        txtSerie.Enabled = true;
+                        txtMaterias.Enabled = true;
+                        txtTelefone.Enabled = true;
+                        txtEmail.Enabled = true;
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Professor não cadastrado!");
+                    txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
                 /*int n = aluno.verificaAtivo();
