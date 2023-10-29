@@ -14,16 +14,20 @@ namespace SharEd_Desktop
         private string area, nome, series;
         private int codigo;
 
+        public Disciplina()
+        {
+
+        }
+
         public Disciplina(int codigo)
         {
             Codigo = codigo;
         }
 
-        public Disciplina(string area, string nome, string series, int codigo)
+        public Disciplina(string area, string nome, int codigo)
         {
             Area1 = area;
             Nome = nome;
-            Series = series;
             Codigo = codigo;
         }
         public bool cadastrarDisciplina()
@@ -32,7 +36,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Disciplina (codigo,nomeDisciplina,area,series) values (" + Codigo + ",'" + Nome + "','" + Area1 + "','" + Series + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Disciplina (codigo,nomeDisciplina,area) values (" + Codigo + ",'" + Nome + "','" + Area1 + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -53,7 +57,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Disciplina set nomeDisciplina='" + Nome + "', area='" + Area1 + "', series='" + Series + "' where codigo =" + Codigo + "", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Disciplina set nomeDisciplina='" + Nome + "', area='" + Area1 + "' where codigo =" + Codigo + "", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -90,6 +94,38 @@ namespace SharEd_Desktop
             }
             return existe;
         }
+        public MySqlDataReader consultarTodasDisciplinas()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Disciplina", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
+        public MySqlDataReader consultarDisciplinasArea(string s)
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Disciplina where area = '"+s+"'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
 
         public bool tornarAtivo()
         {
@@ -109,13 +145,13 @@ namespace SharEd_Desktop
             return result;
         }
 
-        public bool excluirDiretor(int codigo)
+        public bool excluirDisciplina(int codigo)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update MembroDirecao set ativa = 1 where codigo = " + codigo + "", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Disciplina set ativa = 1 where codigo = " + codigo + "", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }

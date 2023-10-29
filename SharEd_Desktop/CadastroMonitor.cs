@@ -102,7 +102,8 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("É necessário que o aluno já esteja cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("É necessário que o aluno esteja cadastrado nas séries adequadas!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtRa.Text = "";
                 }
                 }
                 

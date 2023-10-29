@@ -20,38 +20,18 @@ namespace SharEd_Desktop
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            string series = "";
             try
             {
                 int codigo = int.Parse(txtCodigo.Text);
-                Disciplina disc = new Disciplina(cbxArea.Text,txtNome.Text,"",codigo);
-                if (checkBox1.Checked)
-                {
-                    series = (string)series.Concat("1 ");
-                }
-                if(checkBox2.Checked)
-                {
-                    series = (string)series.Concat("2 ");
-                }
-                if (checkBox3.Checked)
-                {
-                    series = (string)series.Concat("3 ");
-                }
-                if(checkBox4.Checked)
-                {
-                    series = (string)series.Concat("4");
-                }
-                disc.Series = series;
+                Disciplina disc = new Disciplina(cbxArea.Text,txtNome.Text,codigo);
                 if (disc.cadastrarDisciplina())
                 {
                     MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNome.Text = "";
                     cbxArea.Text = "";
                     txtCodigo.Text = "";
-                    checkBox1.Checked = false;
-                    checkBox2.Checked = false;
-                    checkBox3.Checked = false;
-                    checkBox4.Checked = false;
+                    txtNome.Enabled = false;
+                    cbxArea.Enabled = false;
                 }
                 else
                     MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -59,9 +39,7 @@ namespace SharEd_Desktop
             catch (Exception ex)
             {
                 MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            
-
+            }          
 
         }
 
@@ -75,10 +53,6 @@ namespace SharEd_Desktop
                 {
                     txtNome.Enabled = true;
                     cbxArea.Enabled = true;
-                    checkBox1.Enabled = true;
-                    checkBox2.Enabled = true;
-                    checkBox3.Enabled = true;
-                    checkBox4.Enabled = true;
                 }
                 else
                 {

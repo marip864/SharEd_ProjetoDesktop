@@ -117,6 +117,18 @@
     <Compile Include="CadastroProfessor.Designer.cs">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroTema.Designer.cs">
+      <DependentUpon>CadastroTema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaDisciplina.Designer.cs">
+      <DependentUpon>ConsultaDisciplina.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO_Conexao.cs" />
     <Compile Include="Diretor.cs" />
     <Compile Include="Disciplina.cs" />
@@ -166,6 +178,7 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="TemaDisciplina.cs" />
     <EmbeddedResource Include="AtualizacaoAdministrador.resx">
       <DependentUpon>AtualizacaoAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +211,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroProfessor.resx">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroTema.resx">
+      <DependentUpon>CadastroTema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaDisciplina.resx">
+      <DependentUpon>ConsultaDisciplina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoAdministrador.resx">
       <DependentUpon>ExclusaoAdministrador.cs</DependentUpon>
