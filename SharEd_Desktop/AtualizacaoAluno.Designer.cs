@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtivo = new System.Windows.Forms.Button();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.btnAtivo);
             this.panel1.Controls.Add(this.txtSerie);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtNascimento);
@@ -69,6 +71,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 354);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAtivo
+            // 
+            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAtivo.Location = new System.Drawing.Point(343, 273);
+            this.btnAtivo.Name = "btnAtivo";
+            this.btnAtivo.Size = new System.Drawing.Size(247, 41);
+            this.btnAtivo.TabIndex = 15;
+            this.btnAtivo.Text = "Tornar Ativo";
+            this.btnAtivo.UseVisualStyleBackColor = false;
+            this.btnAtivo.Click += new System.EventHandler(this.btnAtivo_Click);
             // 
             // txtSerie
             // 
@@ -151,9 +166,9 @@
             this.btnAtualizar.BackColor = System.Drawing.Color.Crimson;
             this.btnAtualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAtualizar.Location = new System.Drawing.Point(262, 272);
+            this.btnAtualizar.Location = new System.Drawing.Point(57, 273);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(148, 41);
+            this.btnAtualizar.Size = new System.Drawing.Size(263, 41);
             this.btnAtualizar.TabIndex = 6;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
@@ -227,6 +242,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "AtualizacaoAluno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar Aluno";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -252,5 +268,6 @@
         private System.Windows.Forms.MaskedTextBox txtRg;
         private System.Windows.Forms.TextBox txtRa;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button btnAtivo;
     }
 }

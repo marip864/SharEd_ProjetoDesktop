@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtivo = new System.Windows.Forms.Button();
             this.txtDisciplina = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -52,6 +53,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.btnAtivo);
             this.panel1.Controls.Add(this.txtDisciplina);
             this.panel1.Controls.Add(this.txtSerie);
             this.panel1.Controls.Add(this.txtNascimento);
@@ -73,6 +75,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(679, 339);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAtivo
+            // 
+            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAtivo.Location = new System.Drawing.Point(359, 266);
+            this.btnAtivo.Name = "btnAtivo";
+            this.btnAtivo.Size = new System.Drawing.Size(243, 40);
+            this.btnAtivo.TabIndex = 17;
+            this.btnAtivo.Text = "Tornar Ativo";
+            this.btnAtivo.UseVisualStyleBackColor = false;
+            this.btnAtivo.Click += new System.EventHandler(this.btnAtivo_Click);
             // 
             // txtDisciplina
             // 
@@ -153,9 +168,9 @@
             this.btnAtualizar.BackColor = System.Drawing.Color.Crimson;
             this.btnAtualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAtualizar.Location = new System.Drawing.Point(262, 268);
+            this.btnAtualizar.Location = new System.Drawing.Point(77, 266);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(123, 40);
+            this.btnAtualizar.Size = new System.Drawing.Size(250, 40);
             this.btnAtualizar.TabIndex = 8;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
@@ -175,11 +190,11 @@
             // 
             this.lblDisciplina.AutoSize = true;
             this.lblDisciplina.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisciplina.Location = new System.Drawing.Point(53, 215);
+            this.lblDisciplina.Location = new System.Drawing.Point(86, 215);
             this.lblDisciplina.Name = "lblDisciplina";
-            this.lblDisciplina.Size = new System.Drawing.Size(75, 17);
+            this.lblDisciplina.Size = new System.Drawing.Size(42, 17);
             this.lblDisciplina.TabIndex = 6;
-            this.lblDisciplina.Text = "Disciplina:";
+            this.lblDisciplina.Text = "Área:";
             // 
             // lblTelefone
             // 
@@ -249,6 +264,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "AtualizacaoMonitor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar Monitor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -276,5 +292,6 @@
         private System.Windows.Forms.TextBox txtDisciplina;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.MaskedTextBox txtNascimento;
+        private System.Windows.Forms.Button btnAtivo;
     }
 }

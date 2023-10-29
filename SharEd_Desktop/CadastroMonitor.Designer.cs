@@ -198,11 +198,11 @@
             // 
             this.lblDisciplina.AutoSize = true;
             this.lblDisciplina.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisciplina.Location = new System.Drawing.Point(49, 228);
+            this.lblDisciplina.Location = new System.Drawing.Point(82, 228);
             this.lblDisciplina.Name = "lblDisciplina";
-            this.lblDisciplina.Size = new System.Drawing.Size(75, 17);
+            this.lblDisciplina.Size = new System.Drawing.Size(42, 17);
             this.lblDisciplina.TabIndex = 5;
-            this.lblDisciplina.Text = "Disciplina:";
+            this.lblDisciplina.Text = "Área:";
             // 
             // lblTelefone
             // 
@@ -262,6 +262,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroMonitor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Monitor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

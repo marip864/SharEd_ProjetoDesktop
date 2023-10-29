@@ -24,11 +24,13 @@ namespace SharEd_Desktop
             {
                 Administrador admin = new Administrador();
                 admin.excluirAdministrador(int.Parse(txtExcluir.Text));
-                MessageBox.Show("Excluído com sucesso!");
+                MessageBox.Show("Excluído com sucesso!","Shar.Ed!",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                txtExcluir.Text = "";
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!");
+                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtExcluir.Text = "";
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();
@@ -50,7 +52,7 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Administrador não cadastrado!");
+                    MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
                 DAO_Conexao.con.Close();

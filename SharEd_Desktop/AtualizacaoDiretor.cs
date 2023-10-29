@@ -34,7 +34,7 @@ namespace SharEd_Desktop
             Diretor diretor = new Diretor(txtNome.Text, txtRg.Text, txtEmail.Text, txtCargo.Text, txtTelefone.Text, nr);
             if (diretor.atualizarDiretor())
             {
-                MessageBox.Show("Atualização realizada com sucesso!");
+                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -61,24 +61,42 @@ namespace SharEd_Desktop
                         txtTelefone.Enabled = true;
                         txtEmail.Enabled = true;
                     }
+                    int n = diretor.verificaAtivo();
+                    if (n == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Diretor não cadastrado!");
+                    MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
 
             }
+        }
+
+        private void btnAtivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int nr = int.Parse(txtNr.Text);
+                Diretor a = new Diretor(nr);
+                if (a.tornarAtivo())
+                {
+                    MessageBox.Show("Diretor ativado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma opção para atualizar!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            DAO_Conexao.con.Close();
         }
     }
 }

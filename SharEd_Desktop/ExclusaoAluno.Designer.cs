@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtExcluir = new System.Windows.Forms.TextBox();
-            this.lblExcluir = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtExcluir = new System.Windows.Forms.TextBox();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +50,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 338);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.serie});
+            this.dataGridView1.Location = new System.Drawing.Point(62, 103);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(553, 150);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.MinimumWidth = 6;
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 125;
+            // 
+            // serie
+            // 
+            this.serie.HeaderText = "Série";
+            this.serie.MinimumWidth = 6;
+            this.serie.Name = "serie";
+            this.serie.ReadOnly = true;
+            this.serie.Width = 125;
             // 
             // btnExcluir
             // 
@@ -83,35 +112,6 @@
             this.lblExcluir.TabIndex = 0;
             this.lblExcluir.Text = "Digite o RA:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nome,
-            this.serie});
-            this.dataGridView1.Location = new System.Drawing.Point(62, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.MinimumWidth = 6;
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.Width = 125;
-            // 
-            // serie
-            // 
-            this.serie.HeaderText = "Série";
-            this.serie.MinimumWidth = 6;
-            this.serie.Name = "serie";
-            this.serie.ReadOnly = true;
-            this.serie.Width = 125;
-            // 
             // ExclusaoAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "ExclusaoAluno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excluir Aluno";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

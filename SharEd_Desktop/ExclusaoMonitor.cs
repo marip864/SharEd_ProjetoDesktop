@@ -33,7 +33,8 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Monitor não cadastrado!");
+                    MessageBox.Show("Monitor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtExcluir.Text = "";
                 }
 
                 DAO_Conexao.con.Close();
@@ -46,11 +47,11 @@ namespace SharEd_Desktop
             {
                 Monitor monitor = new Monitor();
                 monitor.excluirMonitor(int.Parse(txtExcluir.Text));
-                MessageBox.Show("Excluído com sucesso!");
+                MessageBox.Show("Excluído com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Digite um ra para excluir!");
+                MessageBox.Show("Digite um ra para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();

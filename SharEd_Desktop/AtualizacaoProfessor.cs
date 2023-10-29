@@ -30,48 +30,7 @@ namespace SharEd_Desktop
 
         private void txtRg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Professor prof = new Professor(txtRg.Text);
-            if (e.KeyChar == 13)
-            {
-                MySqlDataReader dr = prof.consultarProfessor01();
-                if (dr.Read())
-                {
-                    txtNome.Text = dr["nome"].ToString();
-                    txtNr.Text = dr["numero"].ToString();
-                    txtSerie.Text = dr["serie"].ToString();
-                    txtEmail.Text = dr["email"].ToString();
-                    txtMaterias.Text = dr["materia"].ToString();
-                    txtTelefone.Text = dr["telefone"].ToString();
-                    txtSerie.Text = dr["serie"].ToString();
-                    txtRg.Enabled = false;
-                    txtNr.Enabled = false;
-                    if(opcao == 2)
-                    {
-                        txtNome.Enabled = false;
-                        txtNr.Enabled = false;
-                        txtSerie.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtMaterias.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtSerie.Enabled = false;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Professor não cadastrado!");
-                }
-                DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
 
-            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -80,7 +39,7 @@ namespace SharEd_Desktop
             Professor prof = new Professor(txtNome.Text, txtRg.Text, txtSerie.Text, txtMaterias.Text, txtTelefone.Text, txtEmail.Text, nr);
             if (prof.atualizarProfessor())
             {
-                MessageBox.Show("Atualização realizada com sucesso!");
+                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -109,24 +68,41 @@ namespace SharEd_Desktop
                         txtTelefone.Enabled = true;
                         txtEmail.Enabled = true;
                     }
+                    int n = professor.verificaAtivo();
+                    if (n == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Professor não cadastrado!");
+                    MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
-
             }
+        }
+
+        private void btnAtivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int nr = int.Parse(txtNr.Text);
+                Professor a = new Professor(nr);
+                if (a.tornarAtivo())
+                {
+                    MessageBox.Show("Professor ativado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma opção para atualizar!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            DAO_Conexao.con.Close();
         }
     }
 }

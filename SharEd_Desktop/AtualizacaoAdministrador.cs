@@ -35,7 +35,7 @@ namespace SharEd_Desktop
             Administrador admin = new Administrador(txtNome.Text, txtRg.Text, txtEmail.Text, txtCargo.Text, txtTelefone.Text, nr);
             if (admin.atualizarAdministrador())
             {
-                MessageBox.Show("Atualização realizada com sucesso!");
+                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -71,16 +71,43 @@ namespace SharEd_Desktop
                     {
                         btnAtivo.Enabled = false;
                     }
+                    int num = admin.verificaAtivo();
+                    if (num == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Administrador não cadastrado!");
+                    MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNr.Text = "";
                 }
                 DAO_Conexao.con.Close();
                 
 
             }
+        }
+
+        private void btnAtivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int nr = int.Parse(txtNr.Text);
+                Administrador a = new Administrador(nr);
+                if (a.tornarAtivo())
+                {
+                    MessageBox.Show("Administrador ativado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma opção para atualizar!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            DAO_Conexao.con.Close();
         }
     }
 }

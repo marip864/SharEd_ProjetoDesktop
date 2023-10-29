@@ -33,7 +33,8 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Professor não cadastrado!");
+                    MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtExcluir.Text = "";
                 }
 
                 DAO_Conexao.con.Close();
@@ -46,11 +47,11 @@ namespace SharEd_Desktop
             {
                 Professor prof = new Professor();
                 prof.excluirProfessor(int.Parse(txtExcluir.Text));
-                MessageBox.Show("Excluído com sucesso!");
+                MessageBox.Show("Excluído com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!");
+                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();

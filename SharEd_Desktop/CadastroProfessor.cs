@@ -23,10 +23,34 @@ namespace SharEd_Desktop
             {
                 int nr = int.Parse(txtNr.Text);
                 Professor prof = new Professor(txtNome.Text, txtRg.Text, cbxSeries.Text, cbxMateria.Text, txtTelefone.Text, txtEmail.Text, nr);
-                if (prof.cadastrarProfessor())
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                if ((txtNr.Text == "") || (cbxMateria.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (cbxSeries.Text == ""))
+                {
+                    MessageBox.Show("Preencha todos os campos!");
+                }
                 else
-                    MessageBox.Show("Erro no cadastro!");
+                {
+                    if (prof.cadastrarProfessor())
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!");
+                        txtNome.Text = "";
+                        txtRg.Text = "";
+                        txtTelefone.Text = "";
+                        txtEmail.Text = "";
+                        txtRg.Text = "";
+                        txtNr.Text = "";
+                        cbxMateria.Text = "";
+                        cbxSeries.Text = "";
+                        txtNome.Enabled = false;
+                        txtRg.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtEmail.Enabled = false;
+                        txtRg.Enabled = false;
+                        cbxMateria.Enabled = false;
+                        cbxSeries.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Erro no cadastro!");
+                }
             }
             catch (Exception ex)
             {

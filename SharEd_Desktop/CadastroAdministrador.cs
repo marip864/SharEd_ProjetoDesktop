@@ -25,27 +25,40 @@ namespace SharEd_Desktop
             {
                 int nr = int.Parse(txtNr.Text);
                 Administrador admin = new Administrador(txtNome.Text, txtRg.Text, cbxCargo.Text, txtTelefone.Text, txtEmail.Text, nr);
-                if (admin.cadastrarAdministrador())
+                if ((txtNr.Text == "") || (cbxCargo.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (txtSenha.Text == ""))
                 {
-                    int tipo = 1;
-                    DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
-                    MessageBox.Show("Cadastro realizado com sucesso!");
-                    txtNome.Text = "";
-                    txtRg.Text = "";
-                    cbxCargo.Text = "";
-                    txtTelefone.Text = "";
-                    txtEmail.Text = "";
-                    txtRg.Text = "";
-                    txtNr.Text = "";
-                    txtSenha.Text = "";
+                    MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                    
                 else
-                    MessageBox.Show("Erro no cadastro!");
+                {
+                    if (admin.cadastrarAdministrador())
+                    {
+                        int tipo = 1;
+                        DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNome.Text = "";
+                        txtRg.Text = "";
+                        cbxCargo.Text = "";
+                        txtTelefone.Text = "";
+                        txtEmail.Text = "";
+                        txtRg.Text = "";
+                        txtNr.Text = "";
+                        txtSenha.Text = "";
+                        txtNome.Enabled = false;
+                        txtRg.Enabled = false;
+                        cbxCargo.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtEmail.Enabled = false;
+                        txtSenha.Enabled = false;
+                    }
+
+                    else
+                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -68,7 +81,7 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Esse administrador já foi cadastrado!");
+                    MessageBox.Show("Esse administrador já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtNr.Text = "";
                 }
             }

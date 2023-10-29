@@ -119,7 +119,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Administrador where numRegistro ='" + nr + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Administrador where numRegistro ='" + nr + "' and ativo = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

@@ -121,6 +121,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "ExclusaoDiretor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excluir Diretor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

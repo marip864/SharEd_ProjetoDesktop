@@ -32,10 +32,10 @@ namespace SharEd_Desktop
         {
             int ra = int.Parse(txtRa.Text);
             int serie = int.Parse(txtSerie.Text);
-            Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, txtDisciplina.Text, ra, txtSerie.Text);
+            Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, txtDisciplina.Text, ra, serie);
             if (monitor.atualizarMonitor())
             {
-                MessageBox.Show("Atualização realizada com sucesso!");
+                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -67,24 +67,42 @@ namespace SharEd_Desktop
                         txtEmail.Enabled = true;
                         txtDisciplina.Enabled = true;
                     }
+                    int n = monitor.verificaAtivo();
+                    if (n == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Monitor não cadastrado!");
+                    MessageBox.Show("Monitor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRa.Text = "";
                 }
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
 
             }
+        }
+
+        private void btnAtivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ra = int.Parse(txtRa.Text);
+                Monitor a = new Monitor(ra);
+                if (a.tornarAtivo())
+                {
+                    MessageBox.Show("Monitor ativado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma opção para atualizar!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            DAO_Conexao.con.Close();
         }
     }
 }

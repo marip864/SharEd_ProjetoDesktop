@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace SharEd_Desktop
             Aluno aluno = new Aluno(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, ra, serie);
             if (aluno.atualizarAluno())
             {
-                MessageBox.Show("Atualização realizada com sucesso!");
+                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -65,24 +66,42 @@ namespace SharEd_Desktop
                         txtTelefone.Enabled = true;
                         txtEmail.Enabled = true;
                     }
+                    int n = aluno.verificaAtivo();
+                    if (n == 1)
+                    {
+                        btnAtivo.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAtivo.Enabled = false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!");
+                    MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRa.Text = "";
                 }
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
 
             }
+        }
+
+        private void btnAtivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ra = int.Parse(txtRa.Text);
+                Aluno a = new Aluno(ra);
+                if (a.tornarAtivo())
+                {
+                    MessageBox.Show("Aluno ativado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione uma opção para atualizar!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            DAO_Conexao.con.Close();
         }
     }
 }

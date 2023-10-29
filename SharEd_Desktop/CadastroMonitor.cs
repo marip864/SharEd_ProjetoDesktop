@@ -23,15 +23,50 @@ namespace SharEd_Desktop
             try
             {
                 int ra = int.Parse(txtRa.Text);
-                Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, cbxDisciplina.Text, ra, cbxSerie.Text);
-                if (monitor.cadastrarMonitor())
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                Monitor monitor = new Monitor(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, cbxDisciplina.Text, ra, 0);
+                if ((txtRa.Text == "") || (cbxSerie.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (txtNascimento.Text == "") || (cbxDisciplina.Text == ""))
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
-                    MessageBox.Show("Erro no cadastro!");
+                {
+                    if (cbxSerie.Text.Equals("2° ano"))
+                    {
+                        monitor.Serie = 2;
+                    }
+                    else if (cbxSerie.Text.Equals("3° ano"))
+                    {
+                        monitor.Serie = 3;
+                    }
+                    else
+                    {
+                        monitor.Serie = 4;
+                    }
+                    if (monitor.cadastrarMonitor())
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNome.Text = "";
+                        txtRg.Text = "";
+                        cbxSerie.Text = "";
+                        txtNascimento.Text = "";
+                        txtTelefone.Text = "";
+                        txtEmail.Text = "";
+                        cbxDisciplina.Text = "";
+                        txtRa.Text = "";
+                        txtNome.Enabled = false;
+                        txtRg.Enabled = false;
+                        cbxSerie.Enabled = false;
+                        txtNascimento.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtEmail.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -52,7 +87,7 @@ namespace SharEd_Desktop
                         {
                             txtNome.Text = dr["nome"].ToString();
                             txtRg.Text = dr["rg"].ToString();
-                            cbxSerie.Text = dr["classe"].ToString();
+                            cbxSerie.Text = string.Concat(dr["classe"].ToString()+ "° ano");
                             txtNascimento.Text = dr["dataNascimento"].ToString();
                             txtTelefone.Text = dr["celular"].ToString();
                             txtEmail.Text = dr["emailInstitucional"].ToString();
@@ -61,26 +96,17 @@ namespace SharEd_Desktop
                     }
                     else
                     {
-                        MessageBox.Show("Esse monitor já foi cadastrado!");
+                        MessageBox.Show("Esse monitor já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtRa.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("É necessário que o aluno já esteja cadastrado!");
+                    MessageBox.Show("É necessário que o aluno já esteja cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 }
                 
                 DAO_Conexao.con.Close();
-                /*int n = aluno.verificaAtivo();
-                if (n == 1)
-                {
-                    button2.Enabled = true;
-                }
-                else
-                {
-                    button2.Enabled = false;
-                }*/
 
             }
         }

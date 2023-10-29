@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtivo = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -42,7 +43,6 @@
             this.lblRg = new System.Windows.Forms.Label();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.btnAtivo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(691, 330);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAtivo
+            // 
+            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAtivo.Location = new System.Drawing.Point(364, 262);
+            this.btnAtivo.Name = "btnAtivo";
+            this.btnAtivo.Size = new System.Drawing.Size(235, 37);
+            this.btnAtivo.TabIndex = 13;
+            this.btnAtivo.Text = "Tornar Ativo";
+            this.btnAtivo.UseVisualStyleBackColor = false;
+            this.btnAtivo.Click += new System.EventHandler(this.btnAtivo_Click);
             // 
             // btnAtualizar
             // 
@@ -197,18 +210,6 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
-            // btnAtivo
-            // 
-            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
-            this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAtivo.Location = new System.Drawing.Point(364, 262);
-            this.btnAtivo.Name = "btnAtivo";
-            this.btnAtivo.Size = new System.Drawing.Size(235, 37);
-            this.btnAtivo.TabIndex = 13;
-            this.btnAtivo.Text = "Ativar Administrador";
-            this.btnAtivo.UseVisualStyleBackColor = false;
-            // 
             // AtualizacaoAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +218,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "AtualizacaoAdministrador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar Administrador";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

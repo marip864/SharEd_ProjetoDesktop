@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.TextBox();
             this.lblExcluir = new System.Windows.Forms.Label();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,22 +63,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(545, 150);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.MinimumWidth = 6;
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.Width = 125;
-            // 
-            // disciplina
-            // 
-            this.disciplina.HeaderText = "Disciplina";
-            this.disciplina.MinimumWidth = 6;
-            this.disciplina.Name = "disciplina";
-            this.disciplina.ReadOnly = true;
-            this.disciplina.Width = 125;
             // 
             // btnExcluir
             // 
@@ -112,6 +96,22 @@
             this.lblExcluir.TabIndex = 0;
             this.lblExcluir.Text = "Digite o RA:";
             // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.MinimumWidth = 6;
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 125;
+            // 
+            // disciplina
+            // 
+            this.disciplina.HeaderText = "Área";
+            this.disciplina.MinimumWidth = 6;
+            this.disciplina.Name = "disciplina";
+            this.disciplina.ReadOnly = true;
+            this.disciplina.Width = 125;
+            // 
             // ExclusaoMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,6 +120,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "ExclusaoMonitor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excluir Monitor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

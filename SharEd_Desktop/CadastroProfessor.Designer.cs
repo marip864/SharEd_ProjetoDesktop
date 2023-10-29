@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbxMateria = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.cbxSeries = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
@@ -44,6 +43,7 @@
             this.lblRg = new System.Windows.Forms.Label();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.cbxSeries = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,12 @@
             this.cbxMateria.Enabled = false;
             this.cbxMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMateria.FormattingEnabled = true;
+            this.cbxMateria.Items.AddRange(new object[] {
+            "Técnico",
+            "Exatas",
+            "Ciências da Natureza",
+            "Humanas",
+            "Linguagens"});
             this.cbxMateria.Location = new System.Drawing.Point(433, 53);
             this.cbxMateria.Name = "cbxMateria";
             this.cbxMateria.Size = new System.Drawing.Size(155, 25);
@@ -92,21 +98,6 @@
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // cbxSeries
-            // 
-            this.cbxSeries.Enabled = false;
-            this.cbxSeries.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSeries.FormattingEnabled = true;
-            this.cbxSeries.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cbxSeries.Location = new System.Drawing.Point(479, 207);
-            this.cbxSeries.Name = "cbxSeries";
-            this.cbxSeries.Size = new System.Drawing.Size(109, 25);
-            this.cbxSeries.TabIndex = 12;
             // 
             // txtEmail
             // 
@@ -179,11 +170,11 @@
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria.Location = new System.Drawing.Point(350, 56);
+            this.lblMateria.Location = new System.Drawing.Point(375, 55);
             this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(67, 17);
+            this.lblMateria.Size = new System.Drawing.Size(42, 17);
             this.lblMateria.TabIndex = 4;
-            this.lblMateria.Text = "Matérias:";
+            this.lblMateria.Text = "Área:";
             // 
             // lblSerie
             // 
@@ -225,6 +216,21 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
+            // cbxSeries
+            // 
+            this.cbxSeries.Enabled = false;
+            this.cbxSeries.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSeries.FormattingEnabled = true;
+            this.cbxSeries.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbxSeries.Location = new System.Drawing.Point(479, 207);
+            this.cbxSeries.Name = "cbxSeries";
+            this.cbxSeries.Size = new System.Drawing.Size(109, 25);
+            this.cbxSeries.TabIndex = 12;
+            // 
             // CadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -233,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroProfessor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Professor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -244,7 +251,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.ComboBox cbxSeries;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtRg;
@@ -258,5 +264,6 @@
         private System.Windows.Forms.Label lblNr;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cbxMateria;
+        private System.Windows.Forms.ComboBox cbxSeries;
     }
 }

@@ -108,10 +108,10 @@
             this.cbxSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxSerie.FormattingEnabled = true;
             this.cbxSerie.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
+            "1° ano",
+            "2° ano",
+            "3° ano",
+            "4° ano"});
             this.cbxSerie.Location = new System.Drawing.Point(474, 215);
             this.cbxSerie.Name = "cbxSerie";
             this.cbxSerie.Size = new System.Drawing.Size(111, 25);
@@ -156,6 +156,7 @@
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(167, 25);
             this.txtRG.TabIndex = 7;
+            this.txtRG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRG_KeyPress);
             // 
             // lblRG
             // 
@@ -233,6 +234,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroAluno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Aluno";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

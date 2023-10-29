@@ -128,7 +128,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Professor where numero =" + nr + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Professor where numero =" + nr + " and ativo = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

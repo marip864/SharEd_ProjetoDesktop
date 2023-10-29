@@ -10,7 +10,7 @@ namespace SharEd_Desktop
 {
     class Monitor
     {
-        private String nome, rg, nascimento, telefone, email, area, serie;
+        private String nome, rg, nascimento, telefone, email, area;
 
         public Monitor(string rg)
         {
@@ -22,7 +22,7 @@ namespace SharEd_Desktop
 
         }
 
-        public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, string serie) 
+        public Monitor(string nome, string rg, string nascimento, string telefone, string email, string area, int ra, int serie) 
         {
             Rg = rg;
             Nascimento = nascimento;
@@ -34,7 +34,7 @@ namespace SharEd_Desktop
             Nome = nome;
         }
 
-        private int ra;
+        private int ra, serie;
 
         public Monitor(int ra)
         {
@@ -47,7 +47,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Monitor (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe,area,ativo) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "','" + Serie + "','" + Area + "',"+0+")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Monitor (ra,nome,celular,rg,emailInstitucional,dataNascimento,classe,area,ativo) values (" + Ra + ",'" + Nome + "','" + Telefone + "','" + Rg + "','" + Email + "','" + Nascimento + "'," + Serie + ",'" + Area + "',"+0+")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -136,7 +136,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Monitor where ra =" + ra + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select * from Monitor where ra =" + ra + " and ativo = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -232,7 +232,7 @@ namespace SharEd_Desktop
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }
         public int Ra { get => ra; set => ra = value; }
-        public string Serie { get => serie; set => serie = value; }
+        public int Serie { get => serie; set => serie = value; }
         public string Area { get => area; set => area = value; }
     }
 

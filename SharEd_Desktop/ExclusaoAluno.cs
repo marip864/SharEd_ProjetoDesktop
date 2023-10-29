@@ -24,11 +24,13 @@ namespace SharEd_Desktop
             {
                 Aluno aluno = new Aluno();
                 aluno.excluirAluno(int.Parse(txtExcluir.Text));
-                MessageBox.Show("Excluído com sucesso!");
+                MessageBox.Show("Excluído com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtExcluir.Text = "";
             }
             else
             {
-                MessageBox.Show("Digite um ra para excluir!");
+                MessageBox.Show("Digite um ra para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtExcluir.Text = "";
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();
@@ -49,7 +51,7 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!");
+                    MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
                 DAO_Conexao.con.Close();

@@ -23,16 +23,54 @@ namespace SharEd_Desktop
             try
             {
                 int ra = int.Parse(txtRA.Text);
-                int serie = int.Parse(cbxSerie.Text);   
-                Aluno aluno = new Aluno(txtNome.Text, txtRG.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, ra, serie);
-                if (aluno.cadastrarAluno())
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                Aluno aluno = new Aluno(txtNome.Text, txtRG.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, ra, 0);
+                if ((txtRA.Text == "") || (cbxSerie.Text == "") || (txtNome.Text == "") || (txtRG.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (txtNascimento.Text == ""))
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
-                    MessageBox.Show("Erro no cadastro!");
+                {
+                    if (cbxSerie.SelectedIndex == 0)
+                    {
+                        aluno.Serie = 1;
+                    }
+                    else if (cbxSerie.SelectedIndex == 1)
+                    {
+                        aluno.Serie = 2;
+                    }
+                    else if (cbxSerie.SelectedIndex == 2)
+                    {
+                        aluno.Serie = 3;
+                    }
+                    else
+                    {
+                        aluno.Serie = 4;
+                    }
+                    if (aluno.cadastrarAluno())
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNome.Text = "";
+                        txtRG.Text = "";
+                        cbxSerie.Text = "";
+                        txtNascimento.Text = "";
+                        txtTelefone.Text = "";
+                        txtEmail.Text = "";
+                        txtRA.Text = "";
+                        txtNome.Enabled = false;
+                        txtRG.Enabled = false;
+                        cbxSerie.Enabled = false;
+                        txtNascimento.Enabled = false;
+                        txtTelefone.Enabled = false;
+                        txtEmail.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
         }
@@ -54,7 +92,7 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Esse aluno já foi cadastrado!");
+                    MessageBox.Show("Esse aluno já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtRA.Text = "";
                 }
            
@@ -70,6 +108,11 @@ namespace SharEd_Desktop
             {
                 button2.Enabled = false;
             }*/
+
+        }
+
+        private void txtRG_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
         }
     }

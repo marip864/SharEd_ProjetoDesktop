@@ -272,5 +272,15 @@ namespace SharEd_Desktop
                 filho.Show();
             }
         }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
+            {
+                CadastroDisciplina filho = new CadastroDisciplina();
+                filho.MdiParent = this;
+                filho.Show();
+            }
+        }
     }
 }

@@ -33,7 +33,8 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Diretor não cadastrado!");
+                    MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtExcluir.Text = "";
                 }
 
                 DAO_Conexao.con.Close();
@@ -46,11 +47,11 @@ namespace SharEd_Desktop
             {
                 Diretor diretor = new Diretor();
                 diretor.excluirDiretor(int.Parse(txtExcluir.Text));
-                MessageBox.Show("Excluído com sucesso!");
+                MessageBox.Show("Excluído com sucesso! ", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!");
+                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();
