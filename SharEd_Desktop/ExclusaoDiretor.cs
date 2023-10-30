@@ -23,21 +23,28 @@ namespace SharEd_Desktop
             dataGridView1.Rows.Clear();
             if (e.KeyChar == 13)
             {
-                Diretor con_d = new Diretor();
-
-                MySqlDataReader r = con_d.consultarDiretorNr(int.Parse(txtExcluir.Text));
-
-                if (r.Read())
+                if (txtExcluir.Text == "")
                 {
-                    dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                    MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtExcluir.Text = "";
-                }
+                    Diretor con_d = new Diretor();
 
-                DAO_Conexao.con.Close();
+                    MySqlDataReader r = con_d.consultarDiretorNr(int.Parse(txtExcluir.Text));
+
+                    if (r.Read())
+                    {
+                        dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtExcluir.Text = "";
+                    }
+
+                    DAO_Conexao.con.Close();
+                }
             }
         }
 
@@ -51,7 +58,7 @@ namespace SharEd_Desktop
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();

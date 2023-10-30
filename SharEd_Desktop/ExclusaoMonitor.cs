@@ -23,21 +23,28 @@ namespace SharEd_Desktop
             dataGridView1.Rows.Clear();
             if (e.KeyChar == 13)
             {
-                Monitor con_m = new Monitor();
-
-                MySqlDataReader r = con_m.consultarMonitorRa(int.Parse(txtExcluir.Text));
-
-                if (r.Read())
+                if (txtExcluir.Text == "")
                 {
-                    dataGridView1.Rows.Add(r["nome"].ToString(), r["area"].ToString());
+                    MessageBox.Show("Digite um RA para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Monitor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtExcluir.Text = "";
-                }
+                    Monitor con_m = new Monitor();
 
-                DAO_Conexao.con.Close();
+                    MySqlDataReader r = con_m.consultarMonitorRa(int.Parse(txtExcluir.Text));
+
+                    if (r.Read())
+                    {
+                        dataGridView1.Rows.Add(r["nome"].ToString(), r["area"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Monitor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtExcluir.Text = "";
+                    }
+
+                    DAO_Conexao.con.Close();
+                }
             }
         }
 
@@ -51,7 +58,7 @@ namespace SharEd_Desktop
             }
             else
             {
-                MessageBox.Show("Digite um ra para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um RA para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();

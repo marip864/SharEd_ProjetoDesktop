@@ -25,19 +25,28 @@ namespace SharEd_Desktop
             if(op == 2)
             {
                 btnAtualizar.Visible = false;
+                btnAtivo.Visible = false;
                 opcao = 2;
             }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            int ra = int.Parse(txtRa.Text);
-            int serie = int.Parse(txtSerie.Text);
-            Aluno aluno = new Aluno(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, ra, serie);
-            if (aluno.atualizarAluno())
+            if(txtRa.Text=="")
             {
-                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um RA!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else
+            {
+                int ra = int.Parse(txtRa.Text);
+                int serie = int.Parse(txtSerie.Text);
+                Aluno aluno = new Aluno(txtNome.Text, txtRg.Text, txtNascimento.Text, txtTelefone.Text, txtEmail.Text, ra, serie);
+                if (aluno.atualizarAluno())
+                {
+                    MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            
         }
 
         private void txtRa_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,43 +54,50 @@ namespace SharEd_Desktop
             
             if (e.KeyChar == 13)
             {
-                Aluno aluno = new Aluno(int.Parse(txtRa.Text));
-                MySqlDataReader dr = aluno.consultarAluno02();
-                if (dr.Read())
+                if (txtRa.Text == "")
                 {
-                    txtNome.Text = dr["nome"].ToString();
-                    txtRg.Text = dr["rg"].ToString();
-                    txtSerie.Text = dr["classe"].ToString();
-                    txtNascimento.Text = dr["dataNascimento"].ToString();
-                    txtTelefone.Text = dr["celular"].ToString();
-                    txtEmail.Text = dr["emailInstitucional"].ToString();
-                    txtRg.Enabled = false;
-                    txtRa.Enabled = false;
-                    if(opcao==1)
-                    {
-                        txtNome.Enabled = true;
-                        txtRg.Enabled = true;
-                        txtSerie.Enabled = true;
-                        txtNascimento.Enabled = true;
-                        txtTelefone.Enabled = true;
-                        txtEmail.Enabled = true;
-                    }
-                    int n = aluno.verificaAtivo();
-                    if (n == 1)
-                    {
-                        btnAtivo.Enabled = true;
-                    }
-                    else
-                    {
-                        btnAtivo.Enabled = false;
-                    }
+                    MessageBox.Show("Digite um RA!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtRa.Text = "";
+                    Aluno aluno = new Aluno(int.Parse(txtRa.Text));
+                    MySqlDataReader dr = aluno.consultarAluno02();
+                    if (dr.Read())
+                    {
+                        txtNome.Text = dr["nome"].ToString();
+                        txtRg.Text = dr["rg"].ToString();
+                        txtSerie.Text = dr["classe"].ToString();
+                        txtNascimento.Text = dr["dataNascimento"].ToString();
+                        txtTelefone.Text = dr["celular"].ToString();
+                        txtEmail.Text = dr["emailInstitucional"].ToString();
+                        txtRg.Enabled = false;
+                        txtRa.Enabled = false;
+                        if (opcao == 1)
+                        {
+                            txtNome.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtSerie.Enabled = true;
+                            txtNascimento.Enabled = true;
+                            txtTelefone.Enabled = true;
+                            txtEmail.Enabled = true;
+                        }
+                        int n = aluno.verificaAtivo();
+                        if (n == 1)
+                        {
+                            btnAtivo.Enabled = true;
+                        }
+                        else
+                        {
+                            btnAtivo.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtRa.Text = "";
+                    }
+                    DAO_Conexao.con.Close();
                 }
-                DAO_Conexao.con.Close();
 
             }
         }

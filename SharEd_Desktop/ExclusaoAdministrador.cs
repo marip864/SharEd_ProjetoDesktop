@@ -29,7 +29,7 @@ namespace SharEd_Desktop
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtExcluir.Text = "";
             }
             txtExcluir.Text = "";
@@ -42,20 +42,27 @@ namespace SharEd_Desktop
 
             if (e.KeyChar==13)
             {
-                Administrador con_a = new Administrador();
-
-                MySqlDataReader r = con_a.consultarAdministradorNr(int.Parse(txtExcluir.Text));
-
-                if (r.Read())
+                if (txtExcluir.Text == "")
                 {
-                    dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                    MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                    Administrador con_a = new Administrador();
 
-                DAO_Conexao.con.Close();
+                    MySqlDataReader r = con_a.consultarAdministradorNr(int.Parse(txtExcluir.Text));
+
+                    if (r.Read())
+                    {
+                        dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                    DAO_Conexao.con.Close();
+                }
             }
             
         }

@@ -24,17 +24,25 @@ namespace SharEd_Desktop
             if (op == 2)
             {
                 button1.Visible = false;
+                btnAtivo.Visible = false;
                 opcao = 2;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int nr = int.Parse(txtNr.Text);
-            Diretor diretor = new Diretor(txtNome.Text, txtRg.Text, txtEmail.Text, txtCargo.Text, txtTelefone.Text, nr);
-            if (diretor.atualizarDiretor())
+            if (txtNr.Text == "")
             {
-                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int nr = int.Parse(txtNr.Text);
+                Diretor diretor = new Diretor(txtNome.Text, txtRg.Text, txtEmail.Text, txtCargo.Text, txtTelefone.Text, nr);
+                if (diretor.atualizarDiretor())
+                {
+                    MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -42,41 +50,48 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
-                Diretor diretor = new Diretor(int.Parse(txtNr.Text));
-                MySqlDataReader dr = diretor.consultarDiretor01();
-                if (dr.Read())
+                if (txtNr.Text == "")
                 {
-                    txtNome.Text = dr["nome"].ToString();
-                    txtRg.Text = dr["rg"].ToString();
-                    txtCargo.Text = dr["cargo"].ToString();
-                    txtTelefone.Text = dr["ramal"].ToString();
-                    txtEmail.Text = dr["email"].ToString();
-                    txtRg.Enabled = false;
-                    txtNr.Enabled = false;
-                    if(opcao==1)
-                    {
-                        txtNome.Enabled = true;
-                        txtRg.Enabled = true;
-                        txtCargo.Enabled = true;
-                        txtTelefone.Enabled = true;
-                        txtEmail.Enabled = true;
-                    }
-                    int n = diretor.verificaAtivo();
-                    if (n == 1)
-                    {
-                        btnAtivo.Enabled = true;
-                    }
-                    else
-                    {
-                        btnAtivo.Enabled = false;
-                    }
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNr.Text = "";
+                    Diretor diretor = new Diretor(int.Parse(txtNr.Text));
+                    MySqlDataReader dr = diretor.consultarDiretor01();
+                    if (dr.Read())
+                    {
+                        txtNome.Text = dr["nome"].ToString();
+                        txtRg.Text = dr["rg"].ToString();
+                        txtCargo.Text = dr["cargo"].ToString();
+                        txtTelefone.Text = dr["ramal"].ToString();
+                        txtEmail.Text = dr["email"].ToString();
+                        txtRg.Enabled = false;
+                        txtNr.Enabled = false;
+                        if (opcao == 1)
+                        {
+                            txtNome.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtCargo.Enabled = true;
+                            txtTelefone.Enabled = true;
+                            txtEmail.Enabled = true;
+                        }
+                        int n = diretor.verificaAtivo();
+                        if (n == 1)
+                        {
+                            btnAtivo.Enabled = true;
+                        }
+                        else
+                        {
+                            btnAtivo.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Diretor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNr.Text = "";
+                    }
+                    DAO_Conexao.con.Close();
                 }
-                DAO_Conexao.con.Close();
 
             }
         }

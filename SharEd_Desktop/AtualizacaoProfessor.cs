@@ -24,6 +24,7 @@ namespace SharEd_Desktop
             if (op == 2)
             {
                 btnAtualizar.Visible = false;
+                btnAtivo.Visible = false;
                 opcao = 2;
             }
         }
@@ -35,11 +36,18 @@ namespace SharEd_Desktop
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            int nr = int.Parse(txtNr.Text);
-            Professor prof = new Professor(txtNome.Text, txtRg.Text, txtSerie.Text, txtMaterias.Text, txtTelefone.Text, txtEmail.Text, nr);
-            if (prof.atualizarProfessor())
+            if (txtNr.Text == "")
             {
-                MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int nr = int.Parse(txtNr.Text);
+                Professor prof = new Professor(txtNome.Text, txtRg.Text, txtSerie.Text, txtMaterias.Text, txtTelefone.Text, txtEmail.Text, nr);
+                if (prof.atualizarProfessor())
+                {
+                    MessageBox.Show("Atualização realizada com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -47,43 +55,50 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
-                Professor professor = new Professor(int.Parse(txtNr.Text));
-                MySqlDataReader dr = professor.consultaProfessor02();
-                if (dr.Read())
+                if (txtNr.Text == "")
                 {
-                    txtNome.Text = dr["nome"].ToString();
-                    txtRg.Text = dr["rg"].ToString();
-                    txtSerie.Text = dr["serie"].ToString();
-                    txtMaterias.Text = dr["materia"].ToString();
-                    txtTelefone.Text = dr["telefone"].ToString();
-                    txtEmail.Text = dr["email"].ToString();
-                    txtRg.Enabled = false;
-                    txtNr.Enabled = false;
-                    if (opcao == 1)
-                    {
-                        txtNome.Enabled = true;
-                        txtRg.Enabled = true;
-                        txtSerie.Enabled = true;
-                        txtMaterias.Enabled = true;
-                        txtTelefone.Enabled = true;
-                        txtEmail.Enabled = true;
-                    }
-                    int n = professor.verificaAtivo();
-                    if (n == 1)
-                    {
-                        btnAtivo.Enabled = true;
-                    }
-                    else
-                    {
-                        btnAtivo.Enabled = false;
-                    }
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNr.Text = "";
+                    Professor professor = new Professor(int.Parse(txtNr.Text));
+                    MySqlDataReader dr = professor.consultaProfessor02();
+                    if (dr.Read())
+                    {
+                        txtNome.Text = dr["nome"].ToString();
+                        txtRg.Text = dr["rg"].ToString();
+                        txtSerie.Text = dr["serie"].ToString();
+                        txtMaterias.Text = dr["materia"].ToString();
+                        txtTelefone.Text = dr["telefone"].ToString();
+                        txtEmail.Text = dr["email"].ToString();
+                        txtRg.Enabled = false;
+                        txtNr.Enabled = false;
+                        if (opcao == 1)
+                        {
+                            txtNome.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtSerie.Enabled = true;
+                            txtMaterias.Enabled = true;
+                            txtTelefone.Enabled = true;
+                            txtEmail.Enabled = true;
+                        }
+                        int n = professor.verificaAtivo();
+                        if (n == 1)
+                        {
+                            btnAtivo.Enabled = true;
+                        }
+                        else
+                        {
+                            btnAtivo.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNr.Text = "";
+                    }
+                    DAO_Conexao.con.Close();
                 }
-                DAO_Conexao.con.Close();
             }
         }
 

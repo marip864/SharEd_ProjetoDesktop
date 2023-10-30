@@ -38,7 +38,7 @@ namespace SharEd_Desktop
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um código!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }          
 
         }
@@ -47,17 +47,24 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
-                Disciplina disc = new Disciplina(int.Parse(txtCodigo.Text));
-                bool existe = disc.consultarDisciplina();
-                if (!existe)
+                if (txtCodigo.Text == "")
                 {
-                    txtNome.Enabled = true;
-                    cbxArea.Enabled = true;
+                    MessageBox.Show("Digite um código!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Essa disciplina já foi cadastrado!");
-                    txtCodigo.Text = "";
+                    Disciplina disc = new Disciplina(int.Parse(txtCodigo.Text));
+                    bool existe = disc.consultarDisciplina();
+                    if (!existe)
+                    {
+                        txtNome.Enabled = true;
+                        cbxArea.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Essa disciplina já foi cadastrada!");
+                        txtCodigo.Text = "";
+                    }
                 }
             }
         }

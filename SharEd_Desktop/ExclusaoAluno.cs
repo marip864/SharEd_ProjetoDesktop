@@ -29,7 +29,7 @@ namespace SharEd_Desktop
             }
             else
             {
-                MessageBox.Show("Digite um ra para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um RA para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtExcluir.Text = "";
             }
             txtExcluir.Text = "";
@@ -41,20 +41,27 @@ namespace SharEd_Desktop
             dataGridView1.Rows.Clear();
             if (e.KeyChar == 13)
             {
-                Aluno con_a = new Aluno();
-
-                MySqlDataReader r = con_a.consultarAlunoRa(int.Parse(txtExcluir.Text));
-
-                if (r.Read())
+                if (txtExcluir.Text == "")
                 {
-                    dataGridView1.Rows.Add(r["nome"].ToString(), r["classe"].ToString());
+                    MessageBox.Show("Digite um RA para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                    Aluno con_a = new Aluno();
 
-                DAO_Conexao.con.Close();
+                    MySqlDataReader r = con_a.consultarAlunoRa(int.Parse(txtExcluir.Text));
+
+                    if (r.Read())
+                    {
+                        dataGridView1.Rows.Add(r["nome"].ToString(), r["classe"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aluno não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                    DAO_Conexao.con.Close();
+                }
             }
         }
     }

@@ -23,21 +23,28 @@ namespace SharEd_Desktop
             dataGridView1.Rows.Clear();
             if (e.KeyChar == 13)
             {
-                Professor con_p = new Professor();
-
-                MySqlDataReader r = con_p.consultarProfessor(int.Parse(txtExcluir.Text));
-
-                if (r.Read())
+                if (txtExcluir.Text == "")
                 {
-                    dataGridView1.Rows.Add(r["nome"].ToString(), r["materia"].ToString());
+                    MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtExcluir.Text = "";
-                }
+                    Professor con_p = new Professor();
 
-                DAO_Conexao.con.Close();
+                    MySqlDataReader r = con_p.consultarProfessor(int.Parse(txtExcluir.Text));
+
+                    if (r.Read())
+                    {
+                        dataGridView1.Rows.Add(r["nome"].ToString(), r["materia"].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtExcluir.Text = "";
+                    }
+
+                    DAO_Conexao.con.Close();
+                }
             }
         }
 
@@ -51,7 +58,7 @@ namespace SharEd_Desktop
             }
             else
             {
-                MessageBox.Show("Digite um número de registro para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Digite um NR para excluir!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             txtExcluir.Text = "";
             dataGridView1.Rows.Clear();
