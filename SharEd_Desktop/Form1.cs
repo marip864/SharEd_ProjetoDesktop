@@ -180,21 +180,25 @@ namespace SharEd_Desktop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int tipo = DAO_Conexao.verLogin(textBox1.Text, textBox2.Text);
+
+        }
+
+        private void btnLogin2_Click(object sender, EventArgs e)
+        {
+            int tipo = DAO_Conexao.verLogin(textBox3.Text, textBox4.Text);
             if (tipo == 0)
                 MessageBox.Show("Usuário/Senha inválidos");
-            if (tipo == 1)
+            else
             {
-                groupBox1.Visible = false;
+                groupBox2.Visible = false;
                 menuStrip1.Visible = true;
-            }
-            if (tipo == 2)
-            {
-                groupBox1.Visible = false;
-                menuStrip1.Visible = true;
-                administradorToolStripMenuItem1.Enabled = false;
-                administradorToolStripMenuItem2.Enabled = false;
-                administradorToolStripMenuItem3.Enabled = false;
+                pictureBox2.Visible = false;
+                if (tipo == 2)
+                {
+                    administradorToolStripMenuItem1.Enabled = false;
+                    administradorToolStripMenuItem2.Enabled = false;
+                    administradorToolStripMenuItem3.Enabled = false;
+                }
             }
         }
 
@@ -301,6 +305,31 @@ namespace SharEd_Desktop
                 filho.MdiParent = this;
                 filho.Show();
             }
+        }
+
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms.OfType<CadastroDisciplina>().Count() == 0) && (Application.OpenForms.OfType<CadastroTema>().Count() == 0) && (Application.OpenForms.OfType<ConsultaDisciplina>().Count() == 0) && (Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
+            {
+                CadastroTurma filho = new CadastroTurma();
+                filho.MdiParent = this;
+                filho.Show();
+            }
+        }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms.OfType<CadastroDisciplina>().Count() == 0) && (Application.OpenForms.OfType<CadastroTema>().Count() == 0) && (Application.OpenForms.OfType<ConsultaDisciplina>().Count() == 0) && (Application.OpenForms.OfType<CadastroAluno>().Count() == 0) && (Application.OpenForms.OfType<CadastroMonitor>().Count() == 0) && (Application.OpenForms.OfType<CadastroProfessor>().Count() == 0) && (Application.OpenForms.OfType<CadastroDiretor>().Count() == 0) && (Application.OpenForms.OfType<CadastroAdministrador>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAluno>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<AtualizacaoAdministrador>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAluno>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoMonitor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoProfessor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoDiretor>().Count() == 0) && (Application.OpenForms.OfType<ExclusaoAdministrador>().Count() == 0))
+            {
+                ExclusaoTurma filho = new ExclusaoTurma();
+                filho.MdiParent = this;
+                filho.Show();
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

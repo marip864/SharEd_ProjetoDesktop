@@ -123,6 +123,12 @@
     <Compile Include="CadastroTema.Designer.cs">
       <DependentUpon>CadastroTema.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroTurma.Designer.cs">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     <Compile Include="ExclusaoProfessor.Designer.cs">
       <DependentUpon>ExclusaoProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExclusaoTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExclusaoTurma.Designer.cs">
+      <DependentUpon>ExclusaoTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,7 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="TemaDisciplina.cs" />
+    <Compile Include="Turma.cs" />
     <EmbeddedResource Include="AtualizacaoAdministrador.resx">
       <DependentUpon>AtualizacaoAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +228,9 @@
     <EmbeddedResource Include="CadastroTema.resx">
       <DependentUpon>CadastroTema.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastroTurma.resx">
+      <DependentUpon>CadastroTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDisciplina.resx">
       <DependentUpon>ConsultaDisciplina.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoProfessor.resx">
       <DependentUpon>ExclusaoProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoTurma.resx">
+      <DependentUpon>ExclusaoTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -264,6 +283,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shar.Ed_logoofc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura_de_tela_20230121_153320-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro Estudante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estudantes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro Estudante %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro Estudante %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desktop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desktop %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

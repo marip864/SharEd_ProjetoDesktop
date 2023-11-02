@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtExcluir = new System.Windows.Forms.TextBox();
             this.lblExcluir = new System.Windows.Forms.Label();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.txtExcluir);
             this.panel1.Controls.Add(this.lblExcluir);
-            this.panel1.Location = new System.Drawing.Point(58, 42);
+            this.panel1.Location = new System.Drawing.Point(149, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(675, 358);
             this.panel1.TabIndex = 0;
@@ -64,9 +64,25 @@
             this.dataGridView1.Size = new System.Drawing.Size(545, 150);
             this.dataGridView1.TabIndex = 3;
             // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.MinimumWidth = 6;
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 125;
+            // 
+            // disciplina
+            // 
+            this.disciplina.HeaderText = "Área";
+            this.disciplina.MinimumWidth = 6;
+            this.disciplina.Name = "disciplina";
+            this.disciplina.ReadOnly = true;
+            this.disciplina.Width = 125;
+            // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.Crimson;
+            this.btnExcluir.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnExcluir.Location = new System.Drawing.Point(240, 287);
@@ -96,29 +112,15 @@
             this.lblExcluir.TabIndex = 0;
             this.lblExcluir.Text = "Digite o RA:";
             // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.MinimumWidth = 6;
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            this.nome.Width = 125;
-            // 
-            // disciplina
-            // 
-            this.disciplina.HeaderText = "Área";
-            this.disciplina.MinimumWidth = 6;
-            this.disciplina.Name = "disciplina";
-            this.disciplina.ReadOnly = true;
-            this.disciplina.Width = 125;
-            // 
             // ExclusaoMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SharEd_Desktop.Properties.Resources.Desktop__1_;
+            this.ClientSize = new System.Drawing.Size(957, 486);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExclusaoMonitor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excluir Monitor";

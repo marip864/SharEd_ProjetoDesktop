@@ -59,6 +59,7 @@ namespace SharEd_Desktop
                         txtNascimento.Enabled = false;
                         txtTelefone.Enabled = false;
                         txtEmail.Enabled = false;
+                        cbxDisciplina.Enabled = false;
                     }
                     else
                         MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

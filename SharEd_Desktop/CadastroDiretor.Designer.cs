@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.lblNr);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.lblNome);
-            this.panel1.Location = new System.Drawing.Point(55, 52);
+            this.panel1.Location = new System.Drawing.Point(135, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 344);
             this.panel1.TabIndex = 0;
@@ -92,7 +92,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Crimson;
+            this.btnCadastrar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnCadastrar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCadastrar.Location = new System.Drawing.Point(269, 271);
@@ -229,8 +229,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SharEd_Desktop.Properties.Resources.Desktop__1_;
+            this.ClientSize = new System.Drawing.Size(957, 486);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CadastroDiretor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Diretor";

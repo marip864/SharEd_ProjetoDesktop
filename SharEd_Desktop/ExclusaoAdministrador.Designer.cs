@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.txtExcluir);
             this.panel1.Controls.Add(this.lblExcluir);
-            this.panel1.Location = new System.Drawing.Point(56, 53);
+            this.panel1.Location = new System.Drawing.Point(140, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(682, 339);
             this.panel1.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.Crimson;
+            this.btnExcluir.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExcluir.Location = new System.Drawing.Point(264, 277);
@@ -117,8 +117,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SharEd_Desktop.Properties.Resources.Desktop__1_;
+            this.ClientSize = new System.Drawing.Size(957, 486);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExclusaoAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excluir Administrador";

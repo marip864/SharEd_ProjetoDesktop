@@ -67,14 +67,14 @@
             this.panel1.Controls.Add(this.lblRg);
             this.panel1.Controls.Add(this.lblNr);
             this.panel1.Controls.Add(this.lblNome);
-            this.panel1.Location = new System.Drawing.Point(63, 52);
+            this.panel1.Location = new System.Drawing.Point(136, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 341);
             this.panel1.TabIndex = 0;
             // 
             // btnAtivo
             // 
-            this.btnAtivo.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtivo.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAtivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAtivo.Location = new System.Drawing.Point(359, 265);
@@ -152,7 +152,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.BackColor = System.Drawing.Color.Crimson;
+            this.btnAtualizar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAtualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAtualizar.Location = new System.Drawing.Point(67, 265);
@@ -238,8 +238,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SharEd_Desktop.Properties.Resources.Desktop__1_;
+            this.ClientSize = new System.Drawing.Size(957, 486);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AtualizacaoProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atualizar Professor";
