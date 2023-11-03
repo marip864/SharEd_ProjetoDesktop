@@ -153,6 +153,32 @@ namespace SharEd_Desktop
             return resultado;
         }
 
+        public string selecionaMateria(int nr)
+        {
+            MySqlDataReader resultS = null;
+            string resultado = null;
+            int resultI = 0;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select materia from Professor where numero = " + nr + "", DAO_Conexao.con);
+                resultS = consulta.ExecuteReader();
+                if (resultS.Read())
+                {
+                    resultado = resultS["materia"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return resultado;
+        }
+
         public int verificaAtivo()
         {
             MySqlDataReader resultS = null;

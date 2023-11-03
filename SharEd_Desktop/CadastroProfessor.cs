@@ -32,13 +32,13 @@ namespace SharEd_Desktop
                     Professor prof = new Professor(txtNome.Text, txtRg.Text, cbxMateria.Text, txtTelefone.Text, txtEmail.Text, nr);
                     if ((txtNr.Text == "") || (cbxMateria.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") )
                     {
-                        MessageBox.Show("Preencha todos os campos!");
+                        MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
                         if (prof.cadastrarProfessor())
                         {
-                            MessageBox.Show("Cadastro realizado com sucesso!");
+                            MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             txtNome.Text = "";
                             txtRg.Text = "";
                             txtTelefone.Text = "";
@@ -54,13 +54,13 @@ namespace SharEd_Desktop
                             cbxMateria.Enabled = false;
                         }
                         else
-                            MessageBox.Show("Erro no cadastro!");
+                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

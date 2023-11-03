@@ -30,16 +30,26 @@ namespace SharEd_Desktop
                 else
                 {
                         Turma turma = new Turma();
+                        Professor professor = new Professor();
                         ProfessorTurma proft = new ProfessorTurma(int.Parse(txtNr.Text), turma.selecionaIdTurma(dataGridView1.CurrentCell.Value.ToString()));
-                        if (proft.cadastrarProfessorTurma())
+                        if(!proft.consultarProfessorMateriaTurma(professor.selecionaMateria(int.Parse(txtNr.Text)),turma.selecionaIdTurma(dataGridView1.CurrentCell.Value.ToString())))
                         {
-                            MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            txtNr.Text = "";
+                            if (proft.cadastrarProfessorTurma())
+                            {
+                                MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                txtNr.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Já existe um professor dessa matéria na turma selecionada!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNr.Text = "";
                         }
+                        
                 }
             }
             catch (Exception ex)

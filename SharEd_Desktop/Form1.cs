@@ -187,7 +187,7 @@ namespace SharEd_Desktop
         {
             int tipo = DAO_Conexao.verLogin(textBox3.Text, textBox4.Text);
             if (tipo == 0)
-                MessageBox.Show("Usuário/Senha inválidos");
+                MessageBox.Show("Usuário/Senha inválidos","Shar.Ed!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             else
             {
                 groupBox2.Visible = false;

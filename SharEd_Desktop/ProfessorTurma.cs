@@ -89,13 +89,13 @@ namespace SharEd_Desktop
             return existe;
         }
 
-        public bool consultarProfessorMateriaTurma(int nr)
+        public bool consultarProfessorMateriaTurma(string materia, int id)
         {
             bool existe = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from ProfessorTurma where professor_nr = " + nr + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select nome from Professor inner join Turma inner join ProfessorTurma on (Turma.idTurma = ProfessorTurma.turma_id) and (Professor.numero = ProfessorTurma.professor_nr) and materia = '"+materia+"' and turma_id = "+id+"", DAO_Conexao.con);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {

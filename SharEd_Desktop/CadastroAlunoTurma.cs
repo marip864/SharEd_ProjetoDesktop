@@ -46,7 +46,7 @@ namespace SharEd_Desktop
                         }
                         else
                         {
-                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
