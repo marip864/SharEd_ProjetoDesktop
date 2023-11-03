@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbxMateria = new System.Windows.Forms.ComboBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.cbxSeries = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
@@ -40,7 +39,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblMateria = new System.Windows.Forms.Label();
-            this.lblSerie = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
             this.lblNr = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
@@ -52,7 +50,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Controls.Add(this.cbxMateria);
             this.panel1.Controls.Add(this.btnCadastrar);
-            this.panel1.Controls.Add(this.cbxSeries);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.txtRg);
@@ -61,7 +58,6 @@
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.lblTelefone);
             this.panel1.Controls.Add(this.lblMateria);
-            this.panel1.Controls.Add(this.lblSerie);
             this.panel1.Controls.Add(this.lblRg);
             this.panel1.Controls.Add(this.lblNr);
             this.panel1.Controls.Add(this.lblNome);
@@ -75,12 +71,6 @@
             this.cbxMateria.Enabled = false;
             this.cbxMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMateria.FormattingEnabled = true;
-            this.cbxMateria.Items.AddRange(new object[] {
-            "Técnico",
-            "Exatas",
-            "Ciências da Natureza",
-            "Humanas",
-            "Linguagens"});
             this.cbxMateria.Location = new System.Drawing.Point(433, 53);
             this.cbxMateria.Name = "cbxMateria";
             this.cbxMateria.Size = new System.Drawing.Size(155, 25);
@@ -99,28 +89,13 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // cbxSeries
-            // 
-            this.cbxSeries.Enabled = false;
-            this.cbxSeries.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSeries.FormattingEnabled = true;
-            this.cbxSeries.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.cbxSeries.Location = new System.Drawing.Point(479, 207);
-            this.cbxSeries.Name = "cbxSeries";
-            this.cbxSeries.Size = new System.Drawing.Size(109, 25);
-            this.cbxSeries.TabIndex = 12;
-            // 
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(161, 208);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(223, 25);
+            this.txtEmail.Size = new System.Drawing.Size(427, 25);
             this.txtEmail.TabIndex = 11;
             // 
             // txtTelefone
@@ -185,21 +160,11 @@
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria.Location = new System.Drawing.Point(375, 55);
+            this.lblMateria.Location = new System.Drawing.Point(342, 56);
             this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(42, 17);
+            this.lblMateria.Size = new System.Drawing.Size(75, 17);
             this.lblMateria.TabIndex = 4;
-            this.lblMateria.Text = "Área:";
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(406, 213);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(54, 17);
-            this.lblSerie.TabIndex = 3;
-            this.lblSerie.Text = "Séries:";
+            this.lblMateria.Text = "Disciplina:";
             // 
             // lblRg
             // 
@@ -261,11 +226,9 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblMateria;
-        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblNr;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cbxMateria;
-        private System.Windows.Forms.ComboBox cbxSeries;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SharEd_Desktop
 {
-    partial class ExclusaoTurma
+    partial class CadastroProfessorTurma
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
-            this.lblCurso = new System.Windows.Forms.Label();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txtNr = new System.Windows.Forms.TextBox();
+            this.lblNr = new System.Windows.Forms.Label();
             this.turma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -41,65 +41,58 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.cbxCurso);
-            this.panel1.Controls.Add(this.lblCurso);
-            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(136, 83);
+            this.panel1.Controls.Add(this.btnCadastrar);
+            this.panel1.Controls.Add(this.txtNr);
+            this.panel1.Controls.Add(this.lblNr);
+            this.panel1.Location = new System.Drawing.Point(109, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 323);
+            this.panel1.Size = new System.Drawing.Size(735, 338);
             this.panel1.TabIndex = 0;
-            // 
-            // cbxCurso
-            // 
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Items.AddRange(new object[] {
-            "Agrimensura",
-            "Desenvolvimento de Sistemas",
-            "Edificações",
-            "Enfermagem",
-            "Mecânica",
-            "Qualidade"});
-            this.cbxCurso.Location = new System.Drawing.Point(161, 40);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(388, 24);
-            this.cbxCurso.TabIndex = 3;
-            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // lblCurso
-            // 
-            this.lblCurso.AutoSize = true;
-            this.lblCurso.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurso.Location = new System.Drawing.Point(83, 42);
-            this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(52, 17);
-            this.lblCurso.TabIndex = 2;
-            this.lblCurso.Text = "Curso:";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnExcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcluir.Location = new System.Drawing.Point(249, 260);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(167, 38);
-            this.btnExcluir.TabIndex = 1;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.turma});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(89, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(572, 150);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnCadastrar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCadastrar.Location = new System.Drawing.Point(289, 268);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(179, 36);
+            this.btnCadastrar.TabIndex = 8;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // txtNr
+            // 
+            this.txtNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNr.Location = new System.Drawing.Point(183, 53);
+            this.txtNr.Name = "txtNr";
+            this.txtNr.Size = new System.Drawing.Size(146, 25);
+            this.txtNr.TabIndex = 1;
+            this.txtNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNr_KeyPress);
+            // 
+            // lblNr
+            // 
+            this.lblNr.AutoSize = true;
+            this.lblNr.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNr.Location = new System.Drawing.Point(130, 56);
+            this.lblNr.Name = "lblNr";
+            this.lblNr.Size = new System.Drawing.Size(33, 17);
+            this.lblNr.TabIndex = 0;
+            this.lblNr.Text = "NR:";
             // 
             // turma
             // 
@@ -109,18 +102,17 @@
             this.turma.ReadOnly = true;
             this.turma.Width = 300;
             // 
-            // ExclusaoTurma
+            // CadastroProfessorTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.BackgroundImage = global::SharEd_Desktop.Properties.Resources.Desktop__1_;
             this.ClientSize = new System.Drawing.Size(957, 486);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "ExclusaoTurma";
+            this.Name = "CadastroProfessorTurma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Excluir Turma";
+            this.Text = "Cadastrar Professor em Turma";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -131,10 +123,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.TextBox txtNr;
+        private System.Windows.Forms.Label lblNr;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbxCurso;
-        private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn turma;
     }
 }

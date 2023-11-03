@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,35 +22,40 @@ namespace SharEd_Desktop
         {
             try
             {
-                int nr = int.Parse(txtNr.Text);
-                Professor prof = new Professor(txtNome.Text, txtRg.Text, cbxSeries.Text, cbxMateria.Text, txtTelefone.Text, txtEmail.Text, nr);
-                if ((txtNr.Text == "") || (cbxMateria.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (cbxSeries.Text == ""))
+                if (txtNr.Text == "")
                 {
-                    MessageBox.Show("Preencha todos os campos!");
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    if (prof.cadastrarProfessor())
+                    int nr = int.Parse(txtNr.Text);
+                    Professor prof = new Professor(txtNome.Text, txtRg.Text, cbxMateria.Text, txtTelefone.Text, txtEmail.Text, nr);
+                    if ((txtNr.Text == "") || (cbxMateria.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") )
                     {
-                        MessageBox.Show("Cadastro realizado com sucesso!");
-                        txtNome.Text = "";
-                        txtRg.Text = "";
-                        txtTelefone.Text = "";
-                        txtEmail.Text = "";
-                        txtRg.Text = "";
-                        txtNr.Text = "";
-                        cbxMateria.Text = "";
-                        cbxSeries.Text = "";
-                        txtNome.Enabled = false;
-                        txtRg.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtRg.Enabled = false;
-                        cbxMateria.Enabled = false;
-                        cbxSeries.Enabled = false;
+                        MessageBox.Show("Preencha todos os campos!");
                     }
                     else
-                        MessageBox.Show("Erro no cadastro!");
+                    {
+                        if (prof.cadastrarProfessor())
+                        {
+                            MessageBox.Show("Cadastro realizado com sucesso!");
+                            txtNome.Text = "";
+                            txtRg.Text = "";
+                            txtTelefone.Text = "";
+                            txtEmail.Text = "";
+                            txtRg.Text = "";
+                            txtNr.Text = "";
+                            cbxMateria.Text = "";
+                            txtNome.Enabled = false;
+                            txtRg.Enabled = false;
+                            txtTelefone.Enabled = false;
+                            txtEmail.Enabled = false;
+                            txtRg.Enabled = false;
+                            cbxMateria.Enabled = false;
+                        }
+                        else
+                            MessageBox.Show("Erro no cadastro!");
+                    }
                 }
             }
             catch (Exception ex)
@@ -62,23 +68,55 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
-                Professor prof = new Professor(int.Parse(txtNr.Text));
-                bool existe = prof.consultarProfessor();
-                if (!existe)
+                txtNome.Enabled = false;
+                txtRg.Enabled = false;
+                txtTelefone.Enabled = false;
+                txtEmail.Enabled = false;
+                txtRg.Enabled = false;
+                cbxMateria.Enabled = false;
+                if (txtNr.Text == "")
                 {
-                    txtNome.Enabled = true;
-                    txtRg.Enabled = true;
-                    txtTelefone.Enabled = true;
-                    txtEmail.Enabled = true;
-                    txtRg.Enabled = true;
-                    txtNr.Enabled = true;
-                    cbxMateria.Enabled = true;
-                    cbxSeries.Enabled = true;
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Esse diretor já foi cadastrado!");
-                    txtNr.Text = "";
+                    int n;
+                    bool ehUmNumero = int.TryParse(txtNr.Text, out n);
+                    if (ehUmNumero)
+                    {
+                        Professor prof = new Professor(int.Parse(txtNr.Text));
+                        bool existe = prof.consultarProfessor();
+                        if (!existe)
+                        {
+                            txtNome.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtTelefone.Enabled = true;
+                            txtEmail.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtNr.Enabled = true;
+                            cbxMateria.Enabled = true;
+                            Disciplina con_d = new Disciplina();
+
+                            MySqlDataReader r = con_d.consultarDisciplinasPeloNome();
+
+                            while (r.Read())
+                            {
+                                cbxMateria.Items.Add(r["nomeDisciplina"].ToString());
+                            }
+
+                            DAO_Conexao.con.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Esse diretor já foi cadastrado!");
+                            txtNr.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNr.Text = "";
+                    }
                 }
             }
         }

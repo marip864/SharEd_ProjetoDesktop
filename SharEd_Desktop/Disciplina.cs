@@ -110,6 +110,22 @@ namespace SharEd_Desktop
             return resultado;
         }
 
+        public MySqlDataReader consultarDisciplinasPeloNome()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select nomeDisciplina from Disciplina", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+
         public MySqlDataReader consultarDisciplinasArea(string s)
         {
             MySqlDataReader resultado = null;

@@ -11,7 +11,7 @@ namespace SharEd_Desktop
 {
     class Professor
     {
-        private String nome, rg, series, materias, telefone, email;
+        private String nome, rg, materias, telefone, email;
 
         public Professor(string rg)
         {
@@ -30,11 +30,10 @@ namespace SharEd_Desktop
             
         }
 
-        public Professor(string nome, string rg, string series, string materias, string telefone, string email, int nr)
+        public Professor(string nome, string rg, string materias, string telefone, string email, int nr)
         {
             Nome = nome;
             Rg = rg;
-            Series = series;
             Materias = materias;
             Telefone = telefone;
             Email = email;
@@ -47,7 +46,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Professor (numero,nome,email,rg,materia,serie,telefone) values (" + Nr + ",'" + Nome + "','" + Email + "','" + Rg + "','" + Materias + "','" + Series + "','" + Telefone + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Professor (numero,nome,email,rg,materia,telefone) values (" + Nr + ",'" + Nome + "','" + Email + "','" + Rg + "','" + Materias + "','" + Telefone + "')", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
@@ -68,7 +67,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', serie = '" + Series + "', telefone = '" + Telefone + "' where numero ="+Nr+"", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Professor set nome='" + Nome + "', email='" + Email + "', rg='" + Rg + "', materia='" + Materias +"', telefone = '" + Telefone + "' where numero ="+Nr+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -220,7 +219,6 @@ namespace SharEd_Desktop
 
         public string Nome { get => nome; set => nome = value; }
         public string Rg { get => rg; set => rg = value; }
-        public string Series { get => series; set => series = value; }
         public string Materias { get => materias; set => materias = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public string Email { get => email; set => email = value; }

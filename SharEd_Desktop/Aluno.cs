@@ -41,6 +41,16 @@ namespace SharEd_Desktop
             Serie = serie;
         }
 
+        public Aluno(string nome, string rg, string nascimento, string telefone, string email, int ra)
+        {
+            Nome = nome;
+            Rg = rg;
+            Nascimento = nascimento;
+            Telefone = telefone;
+            Email = email;
+            Ra = ra;
+        }
+
         public bool cadastrarAluno()
         {
             bool cad = false;
@@ -68,7 +78,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Aluno set nome='" + Nome + "', celular='" + Telefone + "', rg='" + Rg + "', emailInstitucional='" + Email + "', dataNascimento='" + Nascimento + "', classe='" + Serie + "' where ra ="+Ra+"", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Aluno set nome='" + Nome + "', celular='" + Telefone + "', rg='" + Rg + "', emailInstitucional='" + Email + "', dataNascimento='" + Nascimento + "' where ra ="+Ra+"", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 cad = true;
             }
@@ -128,7 +138,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select * from Aluno where rg =" + Rg + "", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select classe from Aluno where ra =" + Ra + "", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

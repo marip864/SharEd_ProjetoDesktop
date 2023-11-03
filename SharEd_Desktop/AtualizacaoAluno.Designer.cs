@@ -30,14 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtivo = new System.Windows.Forms.Button();
-            this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.txtRa = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblSerie = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
@@ -52,14 +50,12 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.btnAtivo);
-            this.panel1.Controls.Add(this.txtSerie);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtNascimento);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.txtRg);
             this.panel1.Controls.Add(this.txtRa);
             this.panel1.Controls.Add(this.txtNome);
-            this.panel1.Controls.Add(this.lblSerie);
             this.panel1.Controls.Add(this.btnAtualizar);
             this.panel1.Controls.Add(this.lblNascimento);
             this.panel1.Controls.Add(this.lblRg);
@@ -85,22 +81,13 @@
             this.btnAtivo.UseVisualStyleBackColor = false;
             this.btnAtivo.Click += new System.EventHandler(this.btnAtivo_Click);
             // 
-            // txtSerie
-            // 
-            this.txtSerie.Enabled = false;
-            this.txtSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerie.Location = new System.Drawing.Point(490, 210);
-            this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(100, 25);
-            this.txtSerie.TabIndex = 14;
-            // 
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(136, 210);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(274, 25);
+            this.txtEmail.Size = new System.Drawing.Size(454, 25);
             this.txtEmail.TabIndex = 13;
             // 
             // txtNascimento
@@ -150,16 +137,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(454, 25);
             this.txtNome.TabIndex = 8;
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(428, 213);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(46, 17);
-            this.lblSerie.TabIndex = 7;
-            this.lblSerie.Text = "Série:";
             // 
             // btnAtualizar
             // 
@@ -255,7 +232,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Label lblNascimento;
         private System.Windows.Forms.Label lblRg;
@@ -263,7 +239,6 @@
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblRa;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtNascimento;
         private System.Windows.Forms.MaskedTextBox txtTelefone;

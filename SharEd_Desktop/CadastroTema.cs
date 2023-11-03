@@ -27,16 +27,23 @@ namespace SharEd_Desktop
         {
             try
             {
-                TemaDisciplina tema = new TemaDisciplina(txtDisciplina.Text,txtTema.Text);
-                if (tema.cadastrarTemaDisciplina())
+                if (txtDisciplina.Text == "")
                 {
-                    MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtDisciplina.Text = "";
-                    txtTema.Text = "";
-                    txtTema.Enabled = false;
+                    MessageBox.Show("Selecione uma disciplina!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
-                    MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                {
+                    TemaDisciplina tema = new TemaDisciplina(txtDisciplina.Text, txtTema.Text);
+                    if (tema.cadastrarTemaDisciplina())
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtDisciplina.Text = "";
+                        txtTema.Text = "";
+                        txtTema.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {

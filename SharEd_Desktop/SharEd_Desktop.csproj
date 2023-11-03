@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="Aluno.cs" />
+    <Compile Include="AlunoTurma.cs" />
     <Compile Include="AtualizacaoAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,12 @@
     <Compile Include="CadastroAluno.Designer.cs">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroAlunoTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroAlunoTurma.Designer.cs">
+      <DependentUpon>CadastroAlunoTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroDiretor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +124,12 @@
     <Compile Include="CadastroProfessor.Designer.cs">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroProfessorTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProfessorTurma.Designer.cs">
+      <DependentUpon>CadastroProfessorTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastroTema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +142,23 @@
     <Compile Include="CadastroTurma.Designer.cs">
       <DependentUpon>CadastroTurma.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaAlunoTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaAlunoTurma.Designer.cs">
+      <DependentUpon>ConsultaAlunoTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaDisciplina.Designer.cs">
       <DependentUpon>ConsultaDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProfessorTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProfessorTurma.Designer.cs">
+      <DependentUpon>ConsultaProfessorTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO_Conexao.cs" />
     <Compile Include="Diretor.cs" />
@@ -149,6 +174,12 @@
     </Compile>
     <Compile Include="ExclusaoAluno.Designer.cs">
       <DependentUpon>ExclusaoAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExclusaoAlunoTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExclusaoAlunoTurma.Designer.cs">
+      <DependentUpon>ExclusaoAlunoTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="ExclusaoDiretor.cs">
       <SubType>Form</SubType>
@@ -168,6 +199,12 @@
     <Compile Include="ExclusaoProfessor.Designer.cs">
       <DependentUpon>ExclusaoProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExclusaoProfessorTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExclusaoProfessorTurma.Designer.cs">
+      <DependentUpon>ExclusaoProfessorTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExclusaoTurma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,8 +219,15 @@
     </Compile>
     <Compile Include="Monitor.cs" />
     <Compile Include="Professor.cs" />
+    <Compile Include="ProfessorTurma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReativarTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReativarTurma.Designer.cs">
+      <DependentUpon>ReativarTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +257,9 @@
     <EmbeddedResource Include="CadastroAluno.resx">
       <DependentUpon>CadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastroAlunoTurma.resx">
+      <DependentUpon>CadastroAlunoTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroDiretor.resx">
       <DependentUpon>CadastroDiretor.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,20 +272,32 @@
     <EmbeddedResource Include="CadastroProfessor.resx">
       <DependentUpon>CadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProfessorTurma.resx">
+      <DependentUpon>CadastroProfessorTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroTema.resx">
       <DependentUpon>CadastroTema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroTurma.resx">
       <DependentUpon>CadastroTurma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaAlunoTurma.resx">
+      <DependentUpon>ConsultaAlunoTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaDisciplina.resx">
       <DependentUpon>ConsultaDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProfessorTurma.resx">
+      <DependentUpon>ConsultaProfessorTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoAdministrador.resx">
       <DependentUpon>ExclusaoAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoAluno.resx">
       <DependentUpon>ExclusaoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoAlunoTurma.resx">
+      <DependentUpon>ExclusaoAlunoTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoDiretor.resx">
       <DependentUpon>ExclusaoDiretor.cs</DependentUpon>
@@ -248,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoProfessor.resx">
       <DependentUpon>ExclusaoProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExclusaoProfessorTurma.resx">
+      <DependentUpon>ExclusaoProfessorTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExclusaoTurma.resx">
       <DependentUpon>ExclusaoTurma.cs</DependentUpon>
@@ -265,6 +327,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReativarTurma.resx">
+      <DependentUpon>ReativarTurma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +369,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Desktop %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shar.Ed_logoofc-removebg-preview %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

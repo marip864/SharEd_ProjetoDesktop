@@ -22,19 +22,26 @@ namespace SharEd_Desktop
         {
             try
             {
-                int codigo = int.Parse(txtCodigo.Text);
-                Disciplina disc = new Disciplina(cbxArea.Text,txtNome.Text,codigo);
-                if (disc.cadastrarDisciplina())
+                if (txtCodigo.Text == "")
                 {
-                    MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNome.Text = "";
-                    cbxArea.Text = "";
-                    txtCodigo.Text = "";
-                    txtNome.Enabled = false;
-                    cbxArea.Enabled = false;
+                    MessageBox.Show("Digite um código!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
-                    MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                {
+                    int codigo = int.Parse(txtCodigo.Text);
+                    Disciplina disc = new Disciplina(cbxArea.Text, txtNome.Text, codigo);
+                    if (disc.cadastrarDisciplina())
+                    {
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNome.Text = "";
+                        cbxArea.Text = "";
+                        txtCodigo.Text = "";
+                        txtNome.Enabled = false;
+                        cbxArea.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             catch (Exception ex)
             {
@@ -47,22 +54,34 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
+                txtNome.Enabled = false;
+                cbxArea.Enabled = false;
                 if (txtCodigo.Text == "")
                 {
                     MessageBox.Show("Digite um código!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    Disciplina disc = new Disciplina(int.Parse(txtCodigo.Text));
-                    bool existe = disc.consultarDisciplina();
-                    if (!existe)
+                    int n;
+                    bool ehUmNumero = int.TryParse(txtCodigo.Text, out n);
+                    if (ehUmNumero)
                     {
-                        txtNome.Enabled = true;
-                        cbxArea.Enabled = true;
+                        Disciplina disc = new Disciplina(int.Parse(txtCodigo.Text));
+                        bool existe = disc.consultarDisciplina();
+                        if (!existe)
+                        {
+                            txtNome.Enabled = true;
+                            cbxArea.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Essa disciplina já foi cadastrada!");
+                            txtCodigo.Text = "";
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Essa disciplina já foi cadastrada!");
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtCodigo.Text = "";
                     }
                 }

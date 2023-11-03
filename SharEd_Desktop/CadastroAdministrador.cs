@@ -23,37 +23,44 @@ namespace SharEd_Desktop
         {
             try
             {
-                int nr = int.Parse(txtNr.Text);
-                Administrador admin = new Administrador(txtNome.Text, txtRg.Text, cbxCargo.Text, txtTelefone.Text, txtEmail.Text, nr);
-                if ((txtNr.Text == "") || (cbxCargo.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (txtSenha.Text == ""))
+                if (txtNr.Text == "")
                 {
-                    MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    if (admin.cadastrarAdministrador())
+                    int nr = int.Parse(txtNr.Text);
+                    Administrador admin = new Administrador(txtNome.Text, txtRg.Text, cbxCargo.Text, txtTelefone.Text, txtEmail.Text, nr);
+                    if ((txtNr.Text == "") || (cbxCargo.Text == "") || (txtNome.Text == "") || (txtRg.Text == "") || (txtTelefone.Text == "") || (txtEmail.Text == "") || (txtSenha.Text == ""))
                     {
-                        int tipo = 1;
-                        DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
-                        MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        txtNome.Text = "";
-                        txtRg.Text = "";
-                        cbxCargo.Text = "";
-                        txtTelefone.Text = "";
-                        txtEmail.Text = "";
-                        txtRg.Text = "";
-                        txtNr.Text = "";
-                        txtSenha.Text = "";
-                        txtNome.Enabled = false;
-                        txtRg.Enabled = false;
-                        cbxCargo.Enabled = false;
-                        txtTelefone.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtSenha.Enabled = false;
+                        MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
                     else
-                        MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    {
+                        if (admin.cadastrarAdministrador())
+                        {
+                            int tipo = 1;
+                            DAO_Conexao.CadLogin(txtNome.Text, txtSenha.Text, tipo);
+                            MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNome.Text = "";
+                            txtRg.Text = "";
+                            cbxCargo.Text = "";
+                            txtTelefone.Text = "";
+                            txtEmail.Text = "";
+                            txtRg.Text = "";
+                            txtNr.Text = "";
+                            txtSenha.Text = "";
+                            txtNome.Enabled = false;
+                            txtRg.Enabled = false;
+                            cbxCargo.Enabled = false;
+                            txtTelefone.Enabled = false;
+                            txtEmail.Enabled = false;
+                            txtSenha.Enabled = false;
+                        }
+
+                        else
+                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
             catch (Exception ex)
@@ -66,23 +73,47 @@ namespace SharEd_Desktop
         {
             if(e.KeyChar==13)
             {
-                Administrador admin = new Administrador(int.Parse(txtNr.Text));
-                bool existe = admin.consultarAdministrador();
-                if (!existe)
+                txtNome.Enabled = false;
+                txtRg.Enabled = false;
+                cbxCargo.Enabled = false;
+                txtTelefone.Enabled = false;
+                txtEmail.Enabled = false;
+                txtRg.Enabled = false;
+                txtSenha.Enabled = false;
+                if (txtNr.Text == "")
                 {
-                    txtNome.Enabled = true;
-                    txtRg.Enabled = true;
-                    cbxCargo.Enabled = true;
-                    txtTelefone.Enabled = true;
-                    txtEmail.Enabled = true;
-                    txtRg.Enabled = true;
-                    txtNr.Enabled = true;
-                    txtSenha.Enabled = true;
+                    MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("Esse administrador já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNr.Text = "";
+                    int n;
+                    bool ehUmNumero = int.TryParse(txtNr.Text, out n);
+                    if (ehUmNumero)
+                    {
+                        Administrador admin = new Administrador(int.Parse(txtNr.Text));
+                        bool existe = admin.consultarAdministrador();
+                        if (!existe)
+                        {
+                            txtNome.Enabled = true;
+                            txtRg.Enabled = true;
+                            cbxCargo.Enabled = true;
+                            txtTelefone.Enabled = true;
+                            txtEmail.Enabled = true;
+                            txtRg.Enabled = true;
+                            txtNr.Enabled = true;
+                            txtSenha.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Esse administrador já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNr.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNr.Text = "";
+                    }
                 }
             }
         }

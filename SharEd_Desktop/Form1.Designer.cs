@@ -60,6 +60,12 @@
             this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alunoEmTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.professorEmTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -72,9 +78,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reativarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +103,7 @@
             this.turmaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1075, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1075, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +116,7 @@
             this.administradorToolStripMenuItem,
             this.administradorToolStripMenuItem1});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar Usuário";
             // 
             // alunoToolStripMenuItem1
@@ -154,7 +163,7 @@
             this.diretorToolStripMenuItem,
             this.administradorToolStripMenuItem2});
             this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
-            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.atualizarToolStripMenuItem.Text = "Atualizar Usuário";
             // 
             // alunoToolStripMenuItem2
@@ -201,7 +210,7 @@
             this.diretorToolStripMenuItem1,
             this.administradorToolStripMenuItem3});
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.alunoToolStripMenuItem.Text = "Excluir Usuário";
             // 
             // alunoToolStripMenuItem3
@@ -248,7 +257,7 @@
             this.diretorToolStripMenuItem2,
             this.administradorToolStripMenuItem4});
             this.validarConteúdoToolStripMenuItem.Name = "validarConteúdoToolStripMenuItem";
-            this.validarConteúdoToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.validarConteúdoToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.validarConteúdoToolStripMenuItem.Text = "Consultar Usuário";
             // 
             // alunoToolStripMenuItem4
@@ -293,7 +302,7 @@
             this.cadastrarTemasToolStripMenuItem,
             this.atualizarTemaToolStripMenuItem});
             this.disciplinaToolStripMenuItem.Name = "disciplinaToolStripMenuItem";
-            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(88, 26);
             this.disciplinaToolStripMenuItem.Text = "Disciplina";
             // 
             // cadastrarToolStripMenuItem1
@@ -321,24 +330,77 @@
             // 
             this.turmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem2,
-            this.excluirToolStripMenuItem});
+            this.excluirToolStripMenuItem,
+            this.reativarToolStripMenuItem,
+            this.alunoEmTurmaToolStripMenuItem,
+            this.professorEmTurmaToolStripMenuItem});
             this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
-            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
             this.turmaToolStripMenuItem.Text = "Turma";
             // 
             // cadastrarToolStripMenuItem2
             // 
             this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(155, 26);
+            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.excluirToolStripMenuItem.Text = "Excluir";
             this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
+            // 
+            // alunoEmTurmaToolStripMenuItem
+            // 
+            this.alunoEmTurmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem3,
+            this.excluirToolStripMenuItem1,
+            this.consultarToolStripMenuItem});
+            this.alunoEmTurmaToolStripMenuItem.Name = "alunoEmTurmaToolStripMenuItem";
+            this.alunoEmTurmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alunoEmTurmaToolStripMenuItem.Text = "Aluno em Turma";
+            this.alunoEmTurmaToolStripMenuItem.Click += new System.EventHandler(this.alunoEmTurmaToolStripMenuItem_Click);
+            // 
+            // cadastrarToolStripMenuItem3
+            // 
+            this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
+            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem3.Click += new System.EventHandler(this.cadastrarToolStripMenuItem3_Click_1);
+            // 
+            // excluirToolStripMenuItem1
+            // 
+            this.excluirToolStripMenuItem1.Name = "excluirToolStripMenuItem1";
+            this.excluirToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.excluirToolStripMenuItem1.Text = "Excluir";
+            this.excluirToolStripMenuItem1.Click += new System.EventHandler(this.excluirToolStripMenuItem1_Click);
+            // 
+            // professorEmTurmaToolStripMenuItem
+            // 
+            this.professorEmTurmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem4,
+            this.excluirToolStripMenuItem2,
+            this.consultarToolStripMenuItem1});
+            this.professorEmTurmaToolStripMenuItem.Name = "professorEmTurmaToolStripMenuItem";
+            this.professorEmTurmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.professorEmTurmaToolStripMenuItem.Text = "Professor em Turma";
+            this.professorEmTurmaToolStripMenuItem.Click += new System.EventHandler(this.professorEmTurmaToolStripMenuItem_Click);
+            // 
+            // cadastrarToolStripMenuItem4
+            // 
+            this.cadastrarToolStripMenuItem4.Name = "cadastrarToolStripMenuItem4";
+            this.cadastrarToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarToolStripMenuItem4.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem4.Click += new System.EventHandler(this.cadastrarToolStripMenuItem4_Click);
+            // 
+            // excluirToolStripMenuItem2
+            // 
+            this.excluirToolStripMenuItem2.Name = "excluirToolStripMenuItem2";
+            this.excluirToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.excluirToolStripMenuItem2.Text = "Excluir";
+            this.excluirToolStripMenuItem2.Click += new System.EventHandler(this.excluirToolStripMenuItem2_Click);
             // 
             // groupBox1
             // 
@@ -415,7 +477,7 @@
             // 
             this.btnLogin1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogin1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin1.Location = new System.Drawing.Point(245, 315);
+            this.btnLogin1.Location = new System.Drawing.Point(251, 320);
             this.btnLogin1.Name = "btnLogin1";
             this.btnLogin1.Size = new System.Drawing.Size(180, 37);
             this.btnLogin1.TabIndex = 0;
@@ -427,7 +489,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblName.Location = new System.Drawing.Point(169, 184);
+            this.lblName.Location = new System.Drawing.Point(111, 184);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 18);
             this.lblName.TabIndex = 1;
@@ -437,7 +499,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPassword.Location = new System.Drawing.Point(169, 246);
+            this.lblPassword.Location = new System.Drawing.Point(111, 245);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(57, 18);
             this.lblPassword.TabIndex = 2;
@@ -446,12 +508,12 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.lblPassword);
             this.groupBox2.Controls.Add(this.lblName);
             this.groupBox2.Controls.Add(this.btnLogin1);
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(202, 120);
@@ -465,33 +527,47 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(172, 267);
+            this.textBox4.Location = new System.Drawing.Point(114, 267);
             this.textBox4.Name = "textBox4";
             this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(354, 25);
+            this.textBox4.Size = new System.Drawing.Size(443, 25);
             this.textBox4.TabIndex = 4;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(172, 208);
+            this.textBox3.Location = new System.Drawing.Point(114, 205);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(354, 25);
+            this.textBox3.Size = new System.Drawing.Size(443, 25);
             this.textBox3.TabIndex = 3;
+            // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            // 
+            // reativarToolStripMenuItem
+            // 
+            this.reativarToolStripMenuItem.Name = "reativarToolStripMenuItem";
+            this.reativarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.reativarToolStripMenuItem.Text = "Reativar";
+            this.reativarToolStripMenuItem.Click += new System.EventHandler(this.reativarToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SharEd_Desktop.Properties.Resources.Shar_Ed_logoofc;
-            this.pictureBox1.Location = new System.Drawing.Point(245, 48);
+            this.pictureBox1.Image = global::SharEd_Desktop.Properties.Resources.Shar_Ed_logoofc_removebg_preview__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(174, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(346, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -510,6 +586,13 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "           ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // TelaInicial
             // 
@@ -583,8 +666,17 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem alunoEmTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem professorEmTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reativarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
     }
 }
 

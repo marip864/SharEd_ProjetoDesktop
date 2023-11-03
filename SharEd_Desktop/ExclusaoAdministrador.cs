@@ -48,20 +48,30 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    Administrador con_a = new Administrador();
-
-                    MySqlDataReader r = con_a.consultarAdministradorNr(int.Parse(txtExcluir.Text));
-
-                    if (r.Read())
+                    int n;
+                    bool ehUmNumero = int.TryParse(txtExcluir.Text, out n);
+                    if (ehUmNumero)
                     {
-                        dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                        Administrador con_a = new Administrador();
+
+                        MySqlDataReader r = con_a.consultarAdministradorNr(int.Parse(txtExcluir.Text));
+
+                        if (r.Read())
+                        {
+                            dataGridView1.Rows.Add(r["nome"].ToString(), r["cargo"].ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+
+                        DAO_Conexao.con.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtExcluir.Text = "";
                     }
-
-                    DAO_Conexao.con.Close();
                 }
             }
             

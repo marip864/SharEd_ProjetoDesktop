@@ -51,56 +51,73 @@ namespace SharEd_Desktop
         {
             if (e.KeyChar == 13)
             {
+                txtNome.Text = "";
+                txtRg.Text = "";
+                txtCargo.Text = "";
+                txtTelefone.Text = "";
+                txtEmail.Text = "";
                 if (txtNr.Text == "")
                 {
                     MessageBox.Show("Digite um NR!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    Administrador admin = new Administrador(int.Parse(txtNr.Text));
-                    MySqlDataReader dr = admin.consultarAdministrador01();
-                    if (dr.Read())
+                    int n1;
+                    bool ehUmNumero = int.TryParse(txtNr.Text, out n1);
+                    if (ehUmNumero)
                     {
-                        txtNome.Text = dr["nome"].ToString();
-                        txtRg.Text = dr["rg"].ToString();
-                        txtCargo.Text = dr["cargo"].ToString();
-                        txtTelefone.Text = dr["ramal"].ToString();
-                        txtEmail.Text = dr["emailInstitucional"].ToString();
-                        txtRg.Enabled = false;
-                        txtNr.Enabled = false;
-                        if (opcao == 1)
+                        Administrador admin = new Administrador(int.Parse(txtNr.Text));
+                        MySqlDataReader dr = admin.consultarAdministrador01();
+                        if (dr.Read())
                         {
-                            txtNome.Enabled = true;
-                            txtRg.Enabled = true;
-                            txtCargo.Enabled = true;
-                            txtTelefone.Enabled = true;
-                            txtEmail.Enabled = true;
+                            txtNome.Text = dr["nome"].ToString();
+                            txtRg.Text = dr["rg"].ToString();
+                            txtCargo.Text = dr["cargo"].ToString();
+                            txtTelefone.Text = dr["ramal"].ToString();
+                            txtEmail.Text = dr["emailInstitucional"].ToString();
+                            txtRg.Enabled = false;
+
+                            if (opcao == 1)
+                            {
+                                txtNr.Enabled = false;
+                                txtNome.Enabled = true;
+                                txtRg.Enabled = true;
+                                txtCargo.Enabled = true;
+                                txtTelefone.Enabled = true;
+                                txtEmail.Enabled = true;
+                            }
+                            int n = admin.verificaAtivo();
+                            if (n == 1)
+                            {
+                                btnAtivo.Enabled = true;
+                            }
+                            else
+                            {
+                                btnAtivo.Enabled = false;
+                            }
+                            int num = admin.verificaAtivo();
+                            if (num == 1)
+                            {
+                                btnAtivo.Enabled = true;
+                            }
+                            else
+                            {
+                                btnAtivo.Enabled = false;
+                            }
                         }
-                        int n = admin.verificaAtivo();
-                        if (n == 1)
-                        {
-                            btnAtivo.Enabled = true;
-                        }
+
                         else
                         {
-                            btnAtivo.Enabled = false;
+                            MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNr.Text = "";
                         }
-                        int num = admin.verificaAtivo();
-                        if (num == 1)
-                        {
-                            btnAtivo.Enabled = true;
-                        }
-                        else
-                        {
-                            btnAtivo.Enabled = false;
-                        }
+                        DAO_Conexao.con.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Administrador não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtNr.Text = "";
                     }
-                    DAO_Conexao.con.Close();
                 }                
 
             }

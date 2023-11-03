@@ -32,8 +32,6 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.cbxSerie = new System.Windows.Forms.ComboBox();
-            this.lblSerie = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.MaskedTextBox();
@@ -53,8 +51,6 @@
             this.panel1.Controls.Add(this.btnCadastrar);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.cbxSerie);
-            this.panel1.Controls.Add(this.lblSerie);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lblTelefone);
             this.panel1.Controls.Add(this.txtRG);
@@ -89,7 +85,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(137, 212);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(237, 25);
+            this.txtEmail.Size = new System.Drawing.Size(448, 25);
             this.txtEmail.TabIndex = 13;
             // 
             // lblEmail
@@ -101,31 +97,6 @@
             this.lblEmail.Size = new System.Drawing.Size(54, 17);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "E-mail:";
-            // 
-            // cbxSerie
-            // 
-            this.cbxSerie.Enabled = false;
-            this.cbxSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxSerie.FormattingEnabled = true;
-            this.cbxSerie.Items.AddRange(new object[] {
-            "1° ano",
-            "2° ano",
-            "3° ano",
-            "4° ano"});
-            this.cbxSerie.Location = new System.Drawing.Point(474, 215);
-            this.cbxSerie.Name = "cbxSerie";
-            this.cbxSerie.Size = new System.Drawing.Size(111, 25);
-            this.cbxSerie.TabIndex = 11;
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.Location = new System.Drawing.Point(407, 215);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(46, 17);
-            this.lblSerie.TabIndex = 10;
-            this.lblSerie.Text = "Série:";
             // 
             // txtTelefone
             // 
@@ -250,8 +221,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.ComboBox cbxSerie;
-        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.MaskedTextBox txtRG;

@@ -29,21 +29,31 @@ namespace SharEd_Desktop
                 }
                 else
                 {
-                    Professor con_p = new Professor();
-
-                    MySqlDataReader r = con_p.consultarProfessor(int.Parse(txtExcluir.Text));
-
-                    if (r.Read())
+                    int n;
+                    bool ehUmNumero = int.TryParse(txtExcluir.Text, out n);
+                    if (ehUmNumero)
                     {
-                        dataGridView1.Rows.Add(r["nome"].ToString(), r["materia"].ToString());
+                        Professor con_p = new Professor();
+
+                        MySqlDataReader r = con_p.consultarProfessor(int.Parse(txtExcluir.Text));
+
+                        if (r.Read())
+                        {
+                            dataGridView1.Rows.Add(r["nome"].ToString(), r["materia"].ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtExcluir.Text = "";
+                        }
+
+                        DAO_Conexao.con.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Professor não cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Digite um número!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtExcluir.Text = "";
                     }
-
-                    DAO_Conexao.con.Close();
                 }
             }
         }

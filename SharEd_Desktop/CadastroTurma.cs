@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace SharEd_Desktop
         {
             try
             {
-                Turma turma = new Turma(cbxCurso.Text, 0, cbxPeriodo.Text);
+                Turma turma = new Turma(cbxCurso.Text, 0, cbxPeriodo.Text, "");
                 if ((cbxCurso.Text == "") || (cbxSerie.Text == "") || (cbxPeriodo.Text == ""))
                 {
                     MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -51,6 +52,8 @@ namespace SharEd_Desktop
                     }
                     if (!turma.consultarTurma())
                     {
+                        string nome = string.Concat(turma.Serie.ToString() + "° ano - " + turma.Curso + ": " + turma.Periodo);
+                        turma.Nome = nome;
                         if (turma.cadastrarTurma())
                         {
                             MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
