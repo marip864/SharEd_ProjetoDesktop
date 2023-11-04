@@ -43,6 +43,27 @@ namespace SharEd_Desktop
             return cad;
         }
 
+        public bool consultarTemaDisciplina()
+        {
+            bool cad = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand insere = new MySqlCommand("select * from TemaDisciplina where nome = '"+Tema+"'", DAO_Conexao.con);
+                insere.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return cad;
+        }
+
         public MySqlDataReader consultarTemaDisciplina(string s)
         {
             MySqlDataReader resultado = null;

@@ -84,6 +84,9 @@ namespace SharEd_Desktop
                                 txtTelefone.Enabled = true;
                                 txtEmail.Enabled = true;
                             }
+
+                            DAO_Conexao.con.Close();
+
                             int n = diretor.verificaAtivo();
                             if (n == 1)
                             {

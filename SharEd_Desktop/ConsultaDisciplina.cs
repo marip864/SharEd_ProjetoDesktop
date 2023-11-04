@@ -34,7 +34,7 @@ namespace SharEd_Desktop
 
         private void cbxDisciplina_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            dataGridView1.Rows.Clear();
             TemaDisciplina tema = new TemaDisciplina();
             MySqlDataReader dr = tema.consultarTemaDisciplina(cbxDisciplina.Text);
             if (dr.Read())

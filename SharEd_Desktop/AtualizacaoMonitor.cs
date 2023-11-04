@@ -92,6 +92,9 @@ namespace SharEd_Desktop
                                 txtEmail.Enabled = true;
                                 txtDisciplina.Enabled = true;
                             }
+
+                            DAO_Conexao.con.Close();
+
                             int n = monitor.verificaAtivo();
                             if (n == 1)
                             {

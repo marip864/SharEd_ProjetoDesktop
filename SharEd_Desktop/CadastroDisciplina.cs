@@ -26,6 +26,10 @@ namespace SharEd_Desktop
                 {
                     MessageBox.Show("Digite um código!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else if((txtNome.Text=="")||(cbxArea.Text==""))
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 else
                 {
                     int codigo = int.Parse(txtCodigo.Text);

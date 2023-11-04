@@ -132,6 +132,30 @@ namespace SharEd_Desktop
             return existe;
         }
 
+        public bool consultarAlunoAtivo()
+        {
+            bool existe = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("select * from Aluno where ra ='" + Ra + "' and ativo = 0", DAO_Conexao.con);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                if (resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return existe;
+        }
+
         public MySqlDataReader consultarAluno01()
         {
             MySqlDataReader resultado = null;
@@ -215,6 +239,10 @@ namespace SharEd_Desktop
                 DAO_Conexao.con.Open();
                 MySqlCommand exclui = new MySqlCommand("update Aluno set ativo = 1 where ra = '" + ra + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
+                MySqlCommand exclui2 = new MySqlCommand("update Monitor set ativo = 1 where ra = '" + ra + "'", DAO_Conexao.con);
+                exclui2.ExecuteNonQuery();
+                MySqlCommand exclui3 = new MySqlCommand("delete from AlunoTurma where aluno_ra = " + ra + "", DAO_Conexao.con);
+                exclui3.ExecuteNonQuery();
                 exc = true;
             }
             catch (Exception e)

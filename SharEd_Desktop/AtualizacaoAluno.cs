@@ -88,6 +88,8 @@ namespace SharEd_Desktop
                                 txtEmail.Enabled = true;
                             }
 
+                            DAO_Conexao.con.Close();
+
                             int n = aluno.verificaAtivo();
                             if (n == 1)
                             {

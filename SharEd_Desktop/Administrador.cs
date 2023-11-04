@@ -169,6 +169,10 @@ namespace SharEd_Desktop
             {
                 Console.WriteLine(ex.ToString());
             }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
 
             return result;
         }

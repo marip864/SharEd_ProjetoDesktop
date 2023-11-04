@@ -35,19 +35,20 @@ namespace SharEd_Desktop
                         MessageBox.Show("O aluno não existe!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtRa.Text = "";
                     }
+                    
                     else
                     {
-                        Turma turma = new Turma();
-                        AlunoTurma at = new AlunoTurma(int.Parse(txtRa.Text), turma.selecionaIdTurma(dataGridView1.CurrentCell.Value.ToString()));
-                        if (at.cadastrarAlunoTurma(at.selecionaSerie()))
-                        {
-                            MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            txtRa.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            Turma turma = new Turma();
+                            AlunoTurma at = new AlunoTurma(int.Parse(txtRa.Text), turma.selecionaIdTurma(dataGridView1.CurrentCell.Value.ToString()));
+                            if (at.cadastrarAlunoTurma(at.selecionaSerie()))
+                            {
+                                MessageBox.Show("Cadastro realizado com sucesso!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                txtRa.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro no cadastro!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                     }
                 }
                 dataGridView1.Rows.Clear();
@@ -79,6 +80,12 @@ namespace SharEd_Desktop
                         if (!a.consultarAluno())
                         {
                             MessageBox.Show("O aluno não existe!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtRa.Text = "";
+                        }
+
+                        else if (!a.consultarAlunoAtivo())
+                        {
+                            MessageBox.Show("O aluno não está ativo!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             txtRa.Text = "";
                         }
 

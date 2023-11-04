@@ -79,19 +79,22 @@ namespace SharEd_Desktop
                             MessageBox.Show("O professor não existe!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             txtNr.Text = "";
                         }
+                        else if(!a.consultarProfessorAtivo())
+                        { 
+                            MessageBox.Show("O professor não está ativo!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtNr.Text = "";
+                        }
                         else
-                        {
+                        {       Turma con_t = new Turma();
 
-                            Turma con_t = new Turma();
+                                MySqlDataReader r = con_t.consultarTurmaNome();
 
-                            MySqlDataReader r = con_t.consultarTurmaNome();
+                                while (r.Read())
+                                {
+                                    dataGridView1.Rows.Add(r["nomeTurma"].ToString());
+                                }
 
-                            while (r.Read())
-                            {
-                                dataGridView1.Rows.Add(r["nomeTurma"].ToString());
-                            }
-
-                            DAO_Conexao.con.Close();
+                                DAO_Conexao.con.Close();
                         }
                     }
                     else
