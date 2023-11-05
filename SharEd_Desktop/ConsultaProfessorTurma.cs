@@ -30,13 +30,22 @@ namespace SharEd_Desktop
 
         private void cbxTurma_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int i = 0;
             dataGridView1.Rows.Clear();
             Turma t = new Turma();
             ProfessorTurma at = new ProfessorTurma();
             at.Id_turma = t.selecionaIdTurma(cbxTurma.Text);
             MySqlDataReader dr = at.consultarProfsEmUmaTurma();
             while (dr.Read())
+            {
                 dataGridView1.Rows.Add(dr["nome"].ToString(), dr["materia"].ToString());
+                i++;
+            }
+            if(i==0)
+            {
+                MessageBox.Show("Ainda não há professores cadastrados para essa turma!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+                
 
             DAO_Conexao.con.Close();
         }

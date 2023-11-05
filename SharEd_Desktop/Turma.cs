@@ -260,7 +260,7 @@ namespace SharEd_Desktop
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("select nomeTurma from Turma", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("select nomeTurma from Turma where ativa = 0", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
             }
             catch (Exception ex)

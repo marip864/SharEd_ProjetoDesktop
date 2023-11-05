@@ -34,12 +34,16 @@ namespace SharEd_Desktop
 
         private void cbxDisciplina_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int i = 0;
             dataGridView1.Rows.Clear();
             TemaDisciplina tema = new TemaDisciplina();
             MySqlDataReader dr = tema.consultarTemaDisciplina(cbxDisciplina.Text);
-            if (dr.Read())
+            while (dr.Read())
+            {
                 dataGridView1.Rows.Add(dr["nome"].ToString());
-            else
+                i++;
+            }    
+            if(i==0)
             {
                 MessageBox.Show("Ainda não há temas cadastrados para essa disciplina!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

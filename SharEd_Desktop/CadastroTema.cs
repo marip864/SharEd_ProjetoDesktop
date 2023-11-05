@@ -38,8 +38,9 @@ namespace SharEd_Desktop
                 else
                 {
                     TemaDisciplina tema = new TemaDisciplina(txtDisciplina.Text, txtTema.Text);
-                    if (tema.consultarTemaDisciplina())
+                    if (!tema.consultarTemaDisciplina())
                     {
+                        MessageBox.Show(tema.consultarTemaDisciplina().ToString());
                         MessageBox.Show("O tema já foi cadastrado!", "Shar.Ed!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
